@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing MobileNavigation in Active State Render Link User is Logged In 1`] = `
+<div
+  className="links-container"
+  onClick={[Function]}
+>
+  <a
+    className="mobile-link"
+    href="/"
+    onClick={[Function]}
+  >
+    Home
+  </a>
+  <a
+    className="mobile-link"
+    href="/news"
+    onClick={[Function]}
+  >
+    News
+  </a>
+  <a
+    className="mobile-link"
+    href="/videos"
+    onClick={[Function]}
+  >
+    Videos
+  </a>
+  <a
+    className="mobile-link"
+    href="/schedule"
+    onClick={[Function]}
+  >
+    Schedule
+  </a>
+  <a
+    className="mobile-link"
+    href="/standings"
+    onClick={[Function]}
+  >
+    Standings
+  </a>
+  <a
+    className="mobile-link"
+    href="/drivers"
+    onClick={[Function]}
+  >
+    Drivers
+  </a>
+  <a
+    className="mobile-link"
+    href="/teams"
+    onClick={[Function]}
+  >
+    Teams
+  </a>
+  <a
+    className="mobile-link"
+    href="/profile"
+    onClick={[Function]}
+  >
+    Profile
+  </a>
+</div>
+`;
+
+exports[`Testing MobileNavigation in Active State Render Link User is NOT Logged 1`] = `
+<div
+  className="links-container"
+  onClick={[Function]}
+>
+  <a
+    className="mobile-link"
+    href="/"
+    onClick={[Function]}
+  >
+    Home
+  </a>
+  <a
+    className="mobile-link"
+    href="/news"
+    onClick={[Function]}
+  >
+    News
+  </a>
+  <a
+    className="mobile-link"
+    href="/videos"
+    onClick={[Function]}
+  >
+    Videos
+  </a>
+  <a
+    className="mobile-link"
+    href="/schedule"
+    onClick={[Function]}
+  >
+    Schedule
+  </a>
+  <a
+    className="mobile-link"
+    href="/standings"
+    onClick={[Function]}
+  >
+    Standings
+  </a>
+  <a
+    className="mobile-link"
+    href="/drivers"
+    onClick={[Function]}
+  >
+    Drivers
+  </a>
+  <a
+    className="mobile-link"
+    href="/teams"
+    onClick={[Function]}
+  >
+    Teams
+  </a>
+  <a
+    className="mobile-link"
+    href="/auth/login"
+    onClick={[Function]}
+  >
+    Sign in
+  </a>
+  <a
+    className="mobile-link"
+    href="/auth/register"
+    onClick={[Function]}
+  >
+    Register
+  </a>
+</div>
+`;

@@ -1,0 +1,22 @@
+.links-container{
+    position: absolute;
+    width: 100%;
+    height: min(110vh);
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    top: 7vh;
+    left: 0;
+    padding-bottom: 5vh;
+    z-index: 5;
+}
+
+
+@media only screen and (max-width: 850px) and (orientation: landscape) {
+    .links-container{
+        margin-top: 8vh;
+        position: absolute;
+    }
+}

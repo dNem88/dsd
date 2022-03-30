@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing MobileNavigation Render Guest Navigation 1`] = `
+<nav
+  className="nav"
+>
+  <div
+    className="hamburger-icon-container"
+    onClick={[Function]}
+  >
+    <img
+      alt="menu-icon"
+      src="menu"
+    />
+  </div>
+  <div
+    className="logo-container"
+  >
+    <img
+      alt="formula1-logo"
+      src="logo"
+    />
+  </div>
+  <div
+    className="profile-icon-container"
+  >
+    
+  </div>
+</nav>
+`;
+
+exports[`Testing MobileNavigation Render User Navigation 1`] = `
+<nav
+  className="nav"
+>
+  <div
+    className="hamburger-icon-container"
+    onClick={[Function]}
+  >
+    <img
+      alt="menu-icon"
+      src="menu"
+    />
+  </div>
+  <div
+    className="logo-container"
+  >
+    <img
+      alt="formula1-logo"
+      src="logo"
+    />
+  </div>
+  <div
+    className="profile-icon-container"
+  >
+    <a
+      href="/profile"
+      onClick={[Function]}
+    >
+      <img
+        alt="profile-icon"
+        src="profile"
+      />
+    </a>
+  </div>
+</nav>
+`;

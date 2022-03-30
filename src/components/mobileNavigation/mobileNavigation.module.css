@@ -1,0 +1,47 @@
+.nav{
+    box-sizing: border-box;
+    position: relative;
+    width: 100vw;
+    height: 7vh;
+    padding: 1vh;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: blue;
+    z-index: 5;
+}
+
+.hamburger-icon-container{
+    height: 100%;
+    width: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.logo-container{
+    height: 100%;
+    width: 25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-icon-container{
+    height: 100%;
+    width: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 850px) and (orientation: landscape) {
+    .nav{
+        height: 15vh;
+    }
+    .hamburger-icon-container, .profile-icon-container{
+        width: 15vh;
+    }
+}
