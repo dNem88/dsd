@@ -6,10 +6,6 @@ const navigation = {
             href: '/',
             content: 'Начало'
         },
-       {
-            href: '/offers',
-            content: 'Оферти'
-        },
         {
             href: '/deals',
             content: 'Сделки'

@@ -1,0 +1,23 @@
+.blue{
+    width: 20vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    color: white;
+    border-radius: .5rem;
+    text-decoration: none;
+    margin-top: .5rem;
+}
+.orange{
+    width: 20vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    color: white;
+    border-radius: .5rem;
+    text-decoration: none;
+}

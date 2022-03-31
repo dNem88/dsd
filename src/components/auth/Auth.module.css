@@ -1,0 +1,39 @@
+.form {
+    width: 80%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+    border-radius: 1rem;
+    align-self: center;
+    justify-self: center;
+    margin-top: 25vh;
+}
+.form > input {
+    width: 80%;
+    height: 5vh;
+    border: 1px solid grey;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+.submit{
+    width: 20vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    font-style: bold;
+    color: white;
+    border-radius: .5rem;
+}
+
+@media only screen and (min-width: 900px) {
+    .form {
+        width: 40vw;
+    }
+}

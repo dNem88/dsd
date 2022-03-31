@@ -47,7 +47,7 @@ function Auth({setUser}) {
             <input onChange={changeUsername} type='text' placeholder='потребителско име' value={username} id='username'></input>
             <label htmlFor='password' ></label>
             <input onChange={changePassword} type='password' placeholder='парола' value={password} id='password'></input>
-            <button type='submit'>ВХОД</button>
+            <button className={styles.submit} type='submit'>ВХОД</button>
         </form>
     )
 
