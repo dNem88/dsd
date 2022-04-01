@@ -4,7 +4,7 @@ const navigation = {
     user: [
        {
             href: '/',
-            content: 'Начало'
+            content: 'Оферти'
         },
         {
             href: '/deals',

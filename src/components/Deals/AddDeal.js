@@ -1,22 +1,20 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-import styles from './AddOffer.module.css'
+import styles from './AddDeal.module.css'
 import Input from '../input/Input'
 
-function AddOffer({offers, setOffers}) {
+function AddDeal({deals, setDeals}) {
     const navigate = useNavigate()
     const [error, setError] = useState(null)
     const [formdata, setFormdata] = useState({
         hood: '',
         address: '',
-        owner: '',
-        phone: '',
-        price: '',
+        income: '',
         comment: ''
     })
-    async function postOffer(formdata) {
+    async function postDeal(formdata) {
         try{
-            const response = await fetch('http://localhost:4000/offers', {
+            const response = await fetch('http://localhost:4000/deals', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -28,8 +26,8 @@ function AddOffer({offers, setOffers}) {
             }
             const json = await response.json()
             if (json.insertedId) {
-                setOffers({...offers, update: !offers.update})
-                navigate('/')
+                setDeals({...deals, update: !deals.update})
+                navigate('/deals')
             }
         }catch(err) {
             setError(err.message)
@@ -37,7 +35,7 @@ function AddOffer({offers, setOffers}) {
     }
     function submitHandler(e) {
         e.preventDefault()
-        postOffer(formdata)
+        postDeal(formdata)
     }
     function changeHandler(e) {
         setFormdata({...formdata, [e.target.id]: e.target.value})
@@ -47,9 +45,7 @@ function AddOffer({offers, setOffers}) {
         <form className={styles.form} onSubmit={submitHandler}>
             <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
             <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
-            <Input type='text' labelContent='собственик' id='owner' onChange={changeHandler} value={formdata.owner}/>
-            <Input type='text' labelContent='телефон' id='phone' onChange={changeHandler} value={formdata.phone}/>
-            <Input  type='text' labelContent='цена' id='price' onChange={changeHandler} value={formdata.price}/>
+            <Input  type='text' labelContent='приход' id='income' onChange={changeHandler} value={formdata.income}/>
             <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
             {error && <p>{error.message}</p>}
             <button className={styles.submit} type='submit'>Добави</button>
@@ -57,4 +53,4 @@ function AddOffer({offers, setOffers}) {
     )
 }   
 
-export default AddOffer
+export default AddDeal

@@ -1,0 +1,41 @@
+.container{
+    width: 90%;
+    height: 15vh;
+    background-color: green;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.container > h3 {
+    width: 45%;
+    height: 6vh;
+    padding: 0;
+    margin: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.container > h5 {
+    width: 90%;
+    height: 6vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 950px){
+    .container{
+        width: 30%;
+        height: 30vh;
+        margin-left: 1rem;
+    }
+}

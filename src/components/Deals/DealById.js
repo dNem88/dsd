@@ -1,20 +1,17 @@
-import React, {useState, useEffect, Fragment} from 'react'
-import styles from './OfferById.module.css'
-import {useParams, useNavigate} from 'react-router-dom'
-import Spinner from '../spinner/Spinner'
-import ErrorComp from '../errorComp/ErrorComp'
+import React, {useState, useEffect} from 'react'
+import styles from './DealById.module.css'
+import {useNavigate, useParams} from 'react-router-dom'
 import LinkButton from '../LinkButton/LinkButton'
 
-
-function OfferById({setOffers, offers}) {
+function DealById({deals, setDeals}) {
     const navigate = useNavigate()
     const {id} = useParams() 
-    const [offer, setOffer] = useState({offer: null, error: null, errorMessage: null})
+    const [deal, setDeal] = useState({offer: null, error: null, errorMessage: null})
     
     useEffect(() => {
         async function Fetch() {
             try{
-                const response = await fetch(`http://localhost:4000/offers/${id}`, {
+                const response = await fetch(`http://localhost:4000/deals/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -23,11 +20,10 @@ function OfferById({setOffers, offers}) {
                     throw new Error('Failed to get offer!')
                 }
                 let json = await response.json()
-                console.log(json)
-                setOffer({...offer, offer: json})
+                console.log(json, 'json')
+                setDeal({...deal, deal: json})
             }catch(e) {
-                console.log(e)
-                setOffer({...offer, error: true, errorMessage: e.message})
+                setDeal({...deal, error: true, errorMessage: e.message})
             }
         }
         Fetch()
@@ -35,7 +31,7 @@ function OfferById({setOffers, offers}) {
 
     async function onDelete() {
          try{
-            const response = await fetch('http://localhost:4000/offers', {
+            const response = await fetch('http://localhost:4000/deals', {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'
@@ -46,23 +42,20 @@ function OfferById({setOffers, offers}) {
             if (!response.ok) {
                 throw new Error('Failed to delete!')
             }
-            setOffers({...offers, update: !offers.update})
-            navigate('/')
+            setDeals({...deals, update: !deals.update})
+            navigate('/deals')
         }catch(e) {
             return e
         }
        
     }
-    function addDeal() {
-        navigate('/deals/add')
-    }
+    
     return (
         <div>
-            <LinkButton href={`/offers/${id}/edit`} content={'ПРОМЕНИ'}/>
-            <button onClick={addDeal}>СДЕЛКА</button>
+            <LinkButton href={`/deals/${id}/edit`} content={'ПРОМЕНИ'}/>
             <button onClick={onDelete}>ИЗТРИЙ</button>
         </div>
     )
 }
 
-export default OfferById
+export default DealById
