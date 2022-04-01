@@ -13,7 +13,7 @@ function EditDeal({setDeals, deals}) {
     useEffect(() => {
          async function Fetch() {
             try{
-                const response = await fetch(`http://localhost:4000/deals/${id}`, {
+                const response = await fetch(`https://dsdrealestate.herokuapp.com/deals/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -34,7 +34,7 @@ function EditDeal({setDeals, deals}) {
     async function submitHandler(e) {
         e.preventDefault()
         try{
-            const response = await fetch(`http://localhost:4000/deals/${id}`, {
+            const response = await fetch(`https://dsdrealestate.herokuapp.com/deals/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

@@ -13,6 +13,9 @@ import DealsList from './components/Deals/DealsList';
 import DealById from './components/Deals/DealById';
 import AddDeal from './components/Deals/AddDeal';
 import EditDeal from './components/Deals/EditDeal';
+import CallsPage from './components/Calls/CallsPage';
+import CallsList from './components/Calls/CallsList';
+import AddCall from './components/Calls/AddCall';
 
 const userContext = React.createContext(null)
 
@@ -22,6 +25,7 @@ function App() {
     const [user, setUser] = useState(context)
     const [offers,setOffers] = useState({offers: [], error: null, update: false})
     const [deals, setDeals] = useState({deals: [], error: null, update: false})
+    const [calls, setCalls] = useState({calls: [], error: null, update: false})
 
     useEffect(() => {
        async function FetchOffers() {
@@ -41,10 +45,11 @@ function App() {
        }
        FetchOffers()
     }, [offers.update])
+
     useEffect(() => {
         async function Fetch() {
             try{
-                let response = await fetch('http://localhost:4000/deals', {
+                let response = await fetch('https://dsdrealestate.herokuapp.com/deals', {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -62,9 +67,24 @@ function App() {
         Fetch()
     }, [deals.update])
 
-    console.log(user)
-    console.log(deals)
-    console.log(offers)
+     useEffect(() => {
+       async function FetchCalls() {
+        try {
+          const response = await fetch('https://dsdrealestate.herokuapp.com/calls', {
+            headers: {
+              'Content-type': 'application/json'
+            }
+          })
+          const json = await response.json()
+          console.log(json)
+          setCalls({...calls, calls: json.reverse(), error: null})
+        } catch(e) {
+          console.log(e)
+          setCalls({...calls, error: true})
+        }
+       }
+       FetchCalls()
+    }, [calls.update])
     
   return (
     <HashRouter>
@@ -97,6 +117,11 @@ function App() {
                 <Route path={':id'} element={<DealById deals={deals} setDeals={setDeals}/>}/>
                 <Route path={':id/edit'} element={<EditDeal deals={deals} setDeals={setDeals}/>}/>
                 <Route index element={<DealsList deals={deals} />}/>
+              </Route>
+              <Route path={'/calls/*'} element={<CallsPage/>}>
+                <Route path={'add'} element={<AddCall calls={calls} setCalls={setCalls}/>}/>
+                 <Route path={'stats'} element={<p>Call Stats</p>}/>
+                <Route index element={<CallsList calls={calls}/>}/>
               </Route>
             </Fragment>
           }

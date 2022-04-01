@@ -1,10 +1,10 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import styles from './DealsPage.module.css'
+import styles from './CallsPage.module.css'
 
 
 
-function DealsPage() {
+function CallsPage() {
     
      return (
         <div className={styles.container}>
@@ -14,4 +14,4 @@ function DealsPage() {
     )
 }
 
-export default DealsPage
+export default CallsPage

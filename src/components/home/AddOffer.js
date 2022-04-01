@@ -16,7 +16,7 @@ function AddOffer({offers, setOffers}) {
     })
     async function postOffer(formdata) {
         try{
-            const response = await fetch('http://localhost:4000/offers', {
+            const response = await fetch('https://dsdrealestate.herokuapp.com/offers', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

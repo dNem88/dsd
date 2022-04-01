@@ -14,7 +14,7 @@ function OfferById({setOffers, offers}) {
     useEffect(() => {
         async function Fetch() {
             try{
-                const response = await fetch(`http://localhost:4000/offers/${id}`, {
+                const response = await fetch(`https://dsdrealestate.herokuapp.com/offers/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -35,7 +35,7 @@ function OfferById({setOffers, offers}) {
 
     async function onDelete() {
          try{
-            const response = await fetch('http://localhost:4000/offers', {
+            const response = await fetch('https://dsdrealestate.herokuapp.com/offers', {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'
