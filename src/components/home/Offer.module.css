@@ -1,4 +1,5 @@
 .container{
+    box-sizing: border-box;
     width: 100%;
     height: 10vh;
     background-color: white;
@@ -10,26 +11,48 @@
     cursor: pointer;
     border-top: 1px solid var(--color-grey);
 }
-.container > h3 {
-    width: 45%;
-    height: 2.5vh;
+.info{
+    box-sizing: border-box;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.first-row{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.first-row > h3{
     padding: 0;
     margin: 0;
+    padding-left: 1rem;
     color: var(--color-dark-grey);
+}
+.first-row > :nth-child(2) {
+    padding-right: 1rem;
+}
+.second-row{
+    width: 100%;
+    height: 40%;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
 }
-.container > h5 {
-    width: 90%;
-    height: 2.5vh;
-    padding: 0;
+.second-row > h5{
+     padding: 0;
     margin: 0;
-    display: flex;
-    align-items: center;
+    padding-left: 1rem;
     color: var(--color-grey);
-    justify-content: flex-start;
 }
+
 
 @media only screen and (min-width: 950px){
     .container{

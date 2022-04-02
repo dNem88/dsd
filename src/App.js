@@ -37,7 +37,7 @@ function App() {
           })
           const json = await response.json()
           console.log(json)
-          setOffers({...offers, offers: json.reverse(), error: null})
+          setOffers({...offers, offers: json, error: null})
         } catch(e) {
           console.log(e)
           setOffers({...offers, error: true})
@@ -58,7 +58,7 @@ function App() {
                     throw new Error('Failed to fetch deals!')
                 }
                 let json = await response.json()
-                setDeals({...deals, deals: json.reverse(), error: null})
+                setDeals({...deals, deals: json, error: null})
                 console.log(json)
             }catch(err) {
                 setDeals({...deals, error: err.message})
@@ -77,7 +77,7 @@ function App() {
           })
           const json = await response.json()
           console.log(json)
-          setCalls({...calls, calls: json.reverse(), error: null})
+          setCalls({...calls, calls: json, error: null})
         } catch(e) {
           console.log(e)
           setCalls({...calls, error: true})
