@@ -1,23 +1,32 @@
-.blue{
-    width: 20vw;
+.container{
+    box-sizing: border-box;
+    width: 15vh;
     height: 5vh;
+    background-color: var(--color-purple);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: .35rem;
+    margin: .5rem;
+}
+
+.container > a{
+    width: 9vh;
+    height: 3vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color:var(--color-purple);
     color: white;
-    border-radius: .25rem;
     text-decoration: none;
-    margin: 1rem;
 }
-.orange{
-    width: 20vw;
-    height: 5vh;
+
+.image-container{
+    width: 4vh;
+    background-color: var(--color-purple);
+    height: 4vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: orange;
-    color: white;
-    border-radius: .5rem;
-    text-decoration: none;
 }
