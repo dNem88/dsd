@@ -1,0 +1,12 @@
+.submit{
+     width: 5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--color-purple);
+    color: white;
+    border: none;
+    border-radius: .35rem;
+    margin-top: 2rem;
+}

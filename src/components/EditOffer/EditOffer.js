@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
 import styles from './EditOffer.module.css'
 import Input from '../input/Input'
+import SubmitButton from '../submitBtn/SubmitButton'
 
 function EditOffer({setOffers, offers}) {
     const navigate = useNavigate()
@@ -61,6 +62,7 @@ function EditOffer({setOffers, offers}) {
         <div className={styles.container}>
             {formdata && 
             <form onSubmit={submitHandler}>
+                <h2>Промени оферта</h2>
                 <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
                 <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
                 <Input type='text' labelContent='собственик' id='owner' onChange={changeHandler} value={formdata.owner}/>
@@ -68,7 +70,7 @@ function EditOffer({setOffers, offers}) {
                 <Input  type='text' labelContent='цена' id='price' onChange={changeHandler} value={formdata.price}/>
                 <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
                 {error && <p>{error}</p>}
-                <button className={styles.submit} type='submit'>ПРОМЕНИ</button>
+                <SubmitButton content={'Запази'}/>
             </form>
             }
         </div>

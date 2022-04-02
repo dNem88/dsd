@@ -1,14 +1,21 @@
 .input{
-    height: 6vh;
+    height: 4vh;
     width: 90%;
-    border-radius: .8rem;
-    border-color: #333;
-    border-width: .7px;
+    border-radius: .35rem;
+    border: 2px solid var(--color-purple);
     padding-left: 1rem;
     font-size: clamp(1rem, 1vw, 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-dark-grey);
+}
+.input:focus{
+    color: black;
 }
 .label{
     padding: .85vh;
-    color: #333;
+    color: var(--coloe-purple);
     font-size: clamp(1rem, .8vw, 2rem);
+    color: var(--color-grey);
 }

@@ -1,9 +1,9 @@
 import React, {useState, useEffect, Fragment} from 'react'
 import styles from './OfferById.module.css'
 import {useParams, useNavigate} from 'react-router-dom'
-import Spinner from '../spinner/Spinner'
 import ErrorComp from '../errorComp/ErrorComp'
 import LinkButton from '../LinkButton/LinkButton'
+import TableRow from '../tableRow/TableRow'
 
 
 function OfferById({setOffers, offers}) {
@@ -57,12 +57,25 @@ function OfferById({setOffers, offers}) {
         navigate('/deals/add')
     }
     return (
-        <div>
-            <LinkButton href={``} clickHandler={() => {navigate(`/offers/${id}/edit`)}} content={'промени'}/>
-            <LinkButton href={``} clickHandler={addDeal} content={'сделка'}/>
-            <LinkButton href={``} clickHandler={onDelete} content={'изтрий'}/>
-            {/* <button onClick={addDeal}>СДЕЛКА</button>
-            <button onClick={onDelete}>ИЗТРИЙ</button> */}
+        <div className={styles.container}>
+            {offer.offer &&
+                <Fragment>
+                    <LinkButton href={``} clickHandler={() => {navigate(`/offers/${id}/edit`)}} image={'edit'} content={'промени'}/>
+                    <LinkButton href={``} clickHandler={addDeal} content={'сделка'} image={'add'}/>
+                    <table className={styles.table}>
+                        <tbody>
+                            {offer.offer && 
+                                Object.entries(offer.offer).map(x => {
+                                    return <TableRow key={x[0]} data={x}/>
+                                })
+                            }
+                        </tbody>
+                    </table>
+                    <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
+                </Fragment>
+
+             }
+            
         </div>
     )
 }
