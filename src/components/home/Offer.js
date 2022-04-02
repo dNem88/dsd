@@ -3,7 +3,7 @@ import styles from './Offer.module.css'
 import {useNavigate} from 'react-router-dom'
 import Dial from '../dial/Dial'
 
-function Offer({_id, hood, price, address}) {
+function Offer({_id, hood, price, address, phone}) {
     const navigate = useNavigate()
 
     function clickHandler(e) {
@@ -11,7 +11,7 @@ function Offer({_id, hood, price, address}) {
     }
     return (
         <div className={styles.container} >
-            <Dial phoneNumber={'0899140844'}/>
+            <Dial phoneNumber={phone}/>
             <div className={styles.info} onClick={clickHandler}>
                 <div className={styles['first-row']}>
                     <h3>{hood}</h3>

@@ -14,7 +14,7 @@ function HomePage({offers}) {
         <div className={styles.container}>
             <LinkButton href={'/offers/add'} content={'добави'} className={'blue'} clickHandler={() => {navigate('/offers/add')}}/>
             {!offers.error ? offers ? offers.offers.map((x,i) => {
-                return <Offer key={i} _id={x._id} hood={x.hood || 'N/A'} price={x.price || 'N/A'} address={x.address || 'N/A'}/>
+                return <Offer key={i} _id={x._id} phone={x.phone} hood={x.hood || 'N/A'} price={x.price || 'N/A'} address={x.address || 'N/A'}/>
             }) : <Spinner/> : <ErrorComp errorMessage={'Failed to fetch'}/>}
         </div>
     )

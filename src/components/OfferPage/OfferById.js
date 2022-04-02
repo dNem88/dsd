@@ -58,9 +58,11 @@ function OfferById({setOffers, offers}) {
     }
     return (
         <div>
-            <LinkButton href={`/offers/${id}/edit`} content={'ПРОМЕНИ'}/>
-            <button onClick={addDeal}>СДЕЛКА</button>
-            <button onClick={onDelete}>ИЗТРИЙ</button>
+            <LinkButton href={``} clickHandler={() => {navigate(`/offers/${id}/edit`)}} content={'промени'}/>
+            <LinkButton href={``} clickHandler={addDeal} content={'сделка'}/>
+            <LinkButton href={``} clickHandler={onDelete} content={'изтрий'}/>
+            {/* <button onClick={addDeal}>СДЕЛКА</button>
+            <button onClick={onDelete}>ИЗТРИЙ</button> */}
         </div>
     )
 }

@@ -5,7 +5,7 @@ function Dial({phoneNumber}) {
 
     return (
         <div className={styles.container}>
-            <a href={`tel:+359${phoneNumber.substring(1) || ''}`}>Dial</a>
+            <a href={`tel:${phoneNumber || ''}`}>Dial</a>
         </div>
     )
 }
