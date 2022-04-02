@@ -9,7 +9,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: blue;
+    background-color: var(--color-purple);
     z-index: 5;
 }
 
@@ -22,20 +22,18 @@
     cursor: pointer;
 }
 
-.logo-container{
+.user{
     height: 100%;
     width: 25vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.profile-icon-container{
-    height: 100%;
-    width: 5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.user > p{
+    color: white;
+    font-weight: bold;
 }
+
 
 @media only screen and (max-width: 850px) and (orientation: landscape) {
     .nav{

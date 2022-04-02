@@ -16,7 +16,7 @@ function MobileNavigation({userContext}) {
                     <div onClick={clickHandler} className={styles['hamburger-icon-container']}>
                         <img src={navigation.active ? "https://rtiovelu.sirv.com/Images/formula1/navigation/xicon.svg" : "https://rtiovelu.sirv.com/Images/formula1/navigation/menu.svg"} alt='menu-icon'/>
                     </div>
-                    <div className={styles['logo-container']}>
+                    <div className={styles['user']}>
                         <p>{context ? context.user.username : ''}</p>
                     </div>
                     {(navigation.active) ? <ActiveMobileNavigation click={clickHandler} /> : null}

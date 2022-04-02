@@ -1,11 +1,15 @@
-body {
-  box-sizing: border-box;
-  width: 100%;
-  border: none;
+:root{
+  --color-purple: #7360f2;
+  --color-dark-grey: #4A4A4A;
+  --color-grey: #B0B0B0;
 }
-html{
-  box-sizing: border-box;
-  border: none;
+body {
   margin: 0;
   padding: 0;
+  background-color: white;
+}
+html{
+  margin: 0;
+  padding: 0;
+  background-color: white;
 }

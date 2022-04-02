@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-color: yellow;
+    background-color: var(--color-purple);
     border-radius: 1rem;
     align-self: center;
     justify-self: center;
@@ -15,7 +15,7 @@
 .form > input {
     width: 80%;
     height: 5vh;
-    border: 1px solid grey;
+    border: 1px solid white;
     border-radius: .5rem;
     margin-bottom: 1rem;
     padding-left: 1rem;
@@ -26,9 +26,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: grey;
+    background-color: white;
     font-style: bold;
-    color: white;
+    color: var(--color-dark-grey);
     border-radius: .5rem;
 }
 
