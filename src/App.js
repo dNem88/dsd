@@ -76,7 +76,7 @@ function App() {
             }
           })
           const json = await response.json()
-          console.log(json)
+
           setCalls({...calls, calls: json, error: null})
         } catch(e) {
           console.log(e)

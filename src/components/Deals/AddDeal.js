@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import styles from './AddDeal.module.css'
 import Input from '../input/Input'
+import Form from '../form/Form'
 
 function AddDeal({deals, setDeals}) {
     const navigate = useNavigate()
@@ -42,14 +43,15 @@ function AddDeal({deals, setDeals}) {
     }
     
     return (
-        <form className={styles.form} onSubmit={submitHandler}>
-            <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
-            <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
-            <Input  type='text' labelContent='приход' id='income' onChange={changeHandler} value={formdata.income}/>
-            <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
-            {error && <p>{error.message}</p>}
-            <button className={styles.submit} type='submit'>Добави</button>
-        </form>
+        <div className={styles.container}>
+            <Form submitHandler={submitHandler} title='Добави сделка' content={'Запази'}>
+                <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
+                <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
+                <Input  type='text' labelContent='приход' id='income' onChange={changeHandler} value={formdata.income}/>
+                <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
+                {error && <p>{error.message}</p>}
+            </Form> 
+        </div>
     )
 }   
 

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
 import styles from './EditDeal.module.css'
 import Input from '../input/Input'
+import Form from '../form/Form'
 
 function EditDeal({setDeals, deals}) {
 
@@ -22,10 +23,8 @@ function EditDeal({setDeals, deals}) {
                     throw new Error('Failed to get offer!')
                 }
                 let json = await response.json()
-                console.log(json)
                 setFormdata(json)
             }catch(e) {
-                console.log(e)
                 setError({error: true, errorMessage: e.message})
             }
         }
@@ -61,14 +60,13 @@ function EditDeal({setDeals, deals}) {
     return (
         <div className={styles.container}>
             {formdata && 
-            <form onSubmit={submitHandler}>
+            <Form submitHandler={submitHandler} content={'запази'} title={'Промени сделка'}>
                 <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
                 <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
                 <Input  type='text' labelContent='приход' id='income' onChange={changeHandler} value={formdata.income}/>
                 <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
                 {error && <p>{error}</p>}
-                <button className={styles.submit} type='submit'>ПРОМЕНИ</button>
-            </form>
+            </Form>
             }
         </div>
     )

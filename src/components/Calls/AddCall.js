@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import styles from './AddCall.module.css'
 import Input from '../input/Input'
+import Form from '../form/Form'
 
 function AddCall({calls, setCalls}) {
     const navigate = useNavigate()
@@ -40,12 +41,13 @@ function AddCall({calls, setCalls}) {
     }
     
     return (
-        <form className={styles.form} onSubmit={submitHandler}>
-            <Input type='text' labelContent='обаждания' id='calls' onChange={changeHandler} value={formdata.hood}/>
-            <Input type='text' labelContent='валидни' id='valid' onChange={changeHandler} value={formdata.address}/>
-            {error && <p>{error.message}</p>}
-            <button className={styles.submit} type='submit'>Добави</button>
-        </form>
+        <div className={styles.container}>
+            <Form title={'Добави обаждания'} content={'Добави'} submitHandler={submitHandler}>
+                <Input type='text' labelContent='обаждания' id='calls' onChange={changeHandler} value={formdata.hood}/>
+                <Input type='text' labelContent='валидни' id='valid' onChange={changeHandler} value={formdata.address}/>
+                {error && <p>{error.message}</p>}
+            </Form>
+        </div>
     )
 }   
 
