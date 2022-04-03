@@ -3,14 +3,16 @@ import styles from './TableRow.module.css'
 
 function TableRow({data}) {
     const [key,value] = data
-    let blacklist = ['_id', 'createdAt', 'updatedAt']
+    let blacklist = ['_id', 'createdAt', 'updatedAt', 'date']
     let translator = {
         hood: 'квартал',
         owner: 'собственик',
         address: 'адрес',
         phone: 'телефон',
         price: 'цена',
-        comment: 'коментар'
+        comment: 'коментар',
+        date: 'дата',
+        income: 'приход'
     }
 
     if (blacklist.includes(key)) {

@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import styles from './AddOffer.module.css'
 import Input from '../input/Input'
+import Form from '../form/Form'
 
 function AddOffer({offers, setOffers}) {
     const navigate = useNavigate()
@@ -44,16 +45,19 @@ function AddOffer({offers, setOffers}) {
     }
     
     return (
-        <form className={styles.form} onSubmit={submitHandler}>
-            <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
-            <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
-            <Input type='text' labelContent='собственик' id='owner' onChange={changeHandler} value={formdata.owner}/>
-            <Input type='text' labelContent='телефон' id='phone' onChange={changeHandler} value={formdata.phone}/>
-            <Input  type='text' labelContent='цена' id='price' onChange={changeHandler} value={formdata.price}/>
-            <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
-            {error && <p>{error.message}</p>}
-            <button className={styles.submit} type='submit'>Добави</button>
-        </form>
+        <div className={styles.container}>
+            {formdata && 
+            <Form submitHandler={submitHandler} title={'Добави оферта'} content={"Запази"}>
+               <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
+                <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
+                <Input type='text' labelContent='собственик' id='owner' onChange={changeHandler} value={formdata.owner}/>
+                <Input type='text' labelContent='телефон' id='phone' onChange={changeHandler} value={formdata.phone}/>
+                <Input  type='text' labelContent='цена' id='price' onChange={changeHandler} value={formdata.price}/>
+                <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
+                {error && <p>{error.message}</p>}
+            </Form>
+            }
+        </div>
     )
 }   
 

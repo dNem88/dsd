@@ -9,11 +9,18 @@ function Deal({_id, address, income, date}) {
         navigate(`/deals/${_id}`)
     }
     return (
-        <div className={styles.container} onClick={clickHandler}>
-            <h3>{dateString}</h3>
-            <h3>{`${income} лв`}</h3>
-            <h5>{address}</h5>
+        <div className={styles.container} >
+            <div className={styles.info} onClick={clickHandler}>
+                <div className={styles['first-row']}>
+                    <h3>{dateString}</h3>
+                    <h3>{`${income} лв`}</h3>
+                </div>
+                <div className={styles['second-row']}>
+                    <h5>{address}</h5>
+                </div>
+            </div>
         </div>
+
     )
 }
 

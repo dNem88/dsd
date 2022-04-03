@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
 import styles from './EditOffer.module.css'
 import Input from '../input/Input'
-import SubmitButton from '../submitBtn/SubmitButton'
+import Form from '../form/Form'
 
 function EditOffer({setOffers, offers}) {
     const navigate = useNavigate()
@@ -22,10 +22,8 @@ function EditOffer({setOffers, offers}) {
                     throw new Error('Failed to get offer!')
                 }
                 let json = await response.json()
-                console.log(json)
                 setFormdata(json)
             }catch(e) {
-                console.log(e)
                 setError({error: true, errorMessage: e.message})
             }
         }
@@ -61,17 +59,15 @@ function EditOffer({setOffers, offers}) {
     return (
         <div className={styles.container}>
             {formdata && 
-            <form onSubmit={submitHandler}>
-                <h2>Промени оферта</h2>
+            <Form submitHandler={submitHandler} title={'Промени оферта'} content={"Запази"}>
                 <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
                 <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
                 <Input type='text' labelContent='собственик' id='owner' onChange={changeHandler} value={formdata.owner}/>
                 <Input type='text' labelContent='телефон' id='phone' onChange={changeHandler} value={formdata.phone}/>
                 <Input  type='text' labelContent='цена' id='price' onChange={changeHandler} value={formdata.price}/>
                 <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
-                {error && <p>{error}</p>}
-                <SubmitButton content={'Запази'}/>
-            </form>
+                {error && <p>{error.message}</p>}
+            </Form>
             }
         </div>
     )

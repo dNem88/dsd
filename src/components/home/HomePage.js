@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './HomePage.module.css'
 import LinkButton from '../LinkButton/LinkButton'
 import Offer from './Offer'
@@ -12,7 +12,7 @@ function HomePage({offers}) {
     
     return (
         <div className={styles.container}>
-            <LinkButton href={'/offers/add'} content={'добави'} className={'blue'} clickHandler={() => {navigate('/offers/add')}} image={'add'}/>
+            <LinkButton href={'/offers/add'} content={'добави'} clickHandler={() => {navigate('/offers/add')}} image={'add'}/>
             {!offers.error ? offers ? offers.offers.map((x,i) => {
                 return <Offer key={i} _id={x._id} phone={x.phone} hood={x.hood || 'N/A'} price={x.price || 'N/A'} address={x.address || 'N/A'}/>
             }) : <Spinner/> : <ErrorComp errorMessage={'Failed to fetch'}/>}

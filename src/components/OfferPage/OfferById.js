@@ -4,6 +4,7 @@ import {useParams, useNavigate} from 'react-router-dom'
 import ErrorComp from '../errorComp/ErrorComp'
 import LinkButton from '../LinkButton/LinkButton'
 import TableRow from '../tableRow/TableRow'
+import Table from '../table/Table'
 
 
 function OfferById({setOffers, offers}) {
@@ -23,10 +24,8 @@ function OfferById({setOffers, offers}) {
                     throw new Error('Failed to get offer!')
                 }
                 let json = await response.json()
-                console.log(json)
                 setOffer({...offer, offer: json})
             }catch(e) {
-                console.log(e)
                 setOffer({...offer, error: true, errorMessage: e.message})
             }
         }
@@ -42,7 +41,6 @@ function OfferById({setOffers, offers}) {
                 },
                 body: JSON.stringify({_id: id})
             })
-            console.log(response)
             if (!response.ok) {
                 throw new Error('Failed to delete!')
             }
@@ -62,15 +60,13 @@ function OfferById({setOffers, offers}) {
                 <Fragment>
                     <LinkButton href={``} clickHandler={() => {navigate(`/offers/${id}/edit`)}} image={'edit'} content={'промени'}/>
                     <LinkButton href={``} clickHandler={addDeal} content={'сделка'} image={'add'}/>
-                    <table className={styles.table}>
-                        <tbody>
+                    <Table>
                             {offer.offer && 
                                 Object.entries(offer.offer).map(x => {
                                     return <TableRow key={x[0]} data={x}/>
                                 })
                             }
-                        </tbody>
-                    </table>
+                    </Table>
                     <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
                 </Fragment>
 
