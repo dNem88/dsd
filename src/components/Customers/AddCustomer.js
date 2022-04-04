@@ -1,19 +1,38 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
 import styles from './AddCustomer.module.css'
 import Input from '../input/Input'
 import Form from '../form/Form'
 
 function AddCustomer({customers, setCustomers}) {
-    const {id} = useParams()
+    const {id} = useParams() /*offerid*/
     const navigate = useNavigate()
     const [error, setError] = useState(null)
     const [formdata, setFormdata] = useState({
         offer: id, 
         phone: '', 
         comment: '',
-        name: ''
+        name: '',
     })
+    useEffect(() => {
+        async function FetchCustomers() {
+            try{
+                const response = await fetch(`https://dsdrealestate.herokuapp.com/offers/${id}`, {
+                    headers: {
+                        'content-type': 'application/json'
+                    }
+                })
+                if (!response.ok) {
+                    throw new Error('Failed to get offer!')
+                }
+                let json = await response.json()
+                setFormdata({...formdata, hood: json.hood, price: json.price, address: json.address})
+            }catch(e) {
+                setError({error: true, errorMessage: e.message})
+            }
+        }
+        FetchCustomers()
+    }, [])
     async function postCustomer(formdata) {
         try{
             const response = await fetch('https://dsdrealestate.herokuapp.com/customers', {

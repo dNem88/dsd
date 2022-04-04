@@ -19,6 +19,7 @@ import AddCall from './components/Calls/AddCall';
 import CustomersPage from './components/Customers/CustomersPage';
 import CustomersList from './components/Customers/CustomersList'
 import AddCustomer from './components/Customers/AddCustomer';
+import CustomerById from './components/Customers/CustomerById';
 
 const userContext = React.createContext(null)
 
@@ -134,7 +135,6 @@ function App() {
               <Route path={'/offers/add'} element={<AddOffer setOffers={setOffers} offers={offers}/>}/>
               <Route path={'/offers/:id'} element={<OfferById setOffers={setOffers} offers={offers}/>}/>
               <Route path={'/offers/:id/edit'} element={<EditOffer setOffers={setOffers} offers={offers}/>}/>
-              <Route path={'/offers/:id/customer'} element={<p>Add customer offer</p>}/>
               <Route path={'/deals/*'} element={<DealsPage/>}>
                 <Route path={'add'} element={<AddDeal deals={deals} setDeals={setDeals}/>}/>
                 <Route path={':id'} element={<DealById deals={deals} setDeals={setDeals}/>}/>
@@ -148,7 +148,7 @@ function App() {
               </Route>
                <Route path={'/customers/*'} element={<CustomersPage/>}>
                 <Route path={':id/add'} element={<AddCustomer customers={customers} setCustomers={setCustomers}/>}/>
-                <Route path={':id'} element={<p>CustomerByID</p>}/>
+                <Route path={':id'} element={<CustomerById customers={customers} setCustomers={setCustomers}/>}/>
                 <Route path={':id/edit'} element={<p>Edit Customer</p>}/>
                 <Route index element={<CustomersList customers={customers}/>}/>
               </Route>
