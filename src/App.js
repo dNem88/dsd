@@ -147,7 +147,7 @@ function App() {
                 <Route index element={<CallsList calls={calls}/>}/>
               </Route>
                <Route path={'/customers/*'} element={<CustomersPage/>}>
-                <Route path={'add'} element={<AddCustomer customers={customers} setCustomers={setCustomers}/>}/>
+                <Route path={':id/add'} element={<AddCustomer customers={customers} setCustomers={setCustomers}/>}/>
                 <Route path={':id'} element={<p>CustomerByID</p>}/>
                 <Route path={':id/edit'} element={<p>Edit Customer</p>}/>
                 <Route index element={<CustomersList customers={customers}/>}/>

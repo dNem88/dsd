@@ -1,18 +1,16 @@
 import React, {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import styles from './AddCustomer.module.css'
 import Input from '../input/Input'
 import Form from '../form/Form'
 
 function AddCustomer({customers, setCustomers}) {
+    const {id} = useParams()
     const navigate = useNavigate()
     const [error, setError] = useState(null)
     const [formdata, setFormdata] = useState({
-        offer: '', /*comes from select menu*/
-        address: '', /*comes from select menu*/
-        hood: '', /*comes from select menu*/
+        offer: id, 
         phone: '', 
-        price: '', /*comes from select menu*/
         comment: '',
         name: ''
     })
@@ -51,6 +49,7 @@ function AddCustomer({customers, setCustomers}) {
             <Form submitHandler={submitHandler} title={'Добави клиент'} content={"Запази"}>
                 <Input type='text' labelContent='име' id='name' onChange={changeHandler} value={formdata.name}/>
                 <Input type='text' labelContent='телефон' id='phone' onChange={changeHandler} value={formdata.phone}/>
+                <Input type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
                 {error && <p>{error.message}</p>}
             </Form>
             }
