@@ -1,4 +1,4 @@
-.container{
+.container-purple{
     width: 10vh;
     height: 10vh;
     background-color: white;
@@ -6,7 +6,15 @@
     align-items: center;
     justify-content: center;
 }
-.container > a{
+.container-white{
+    width: 10vh;
+    height: 10vh;
+    background-color: var(--color-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.purple{
     width: 8vh;
     height: 8vh;
     background-color: var(--color-purple);
@@ -16,4 +24,15 @@
     align-items: center;
     justify-content: center;
     color: white;
+}
+.white{
+    width: 8vh;
+    height: 8vh;
+    background-color:white;
+    text-decoration: none;
+    border-radius: .35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-purple);
 }

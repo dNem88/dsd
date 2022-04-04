@@ -1,21 +1,24 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-import styles from './AddDeal.module.css'
+import styles from './AddCustomer.module.css'
 import Input from '../input/Input'
 import Form from '../form/Form'
 
-function AddDeal({deals, setDeals}) {
+function AddCustomer({customers, setCustomers}) {
     const navigate = useNavigate()
     const [error, setError] = useState(null)
     const [formdata, setFormdata] = useState({
-        hood: '',
-        address: '',
-        income: '',
-        comment: ''
+        offer: '', /*comes from select menu*/
+        address: '', /*comes from select menu*/
+        hood: '', /*comes from select menu*/
+        phone: '', 
+        price: '', /*comes from select menu*/
+        comment: '',
+        name: ''
     })
-    async function postDeal(formdata) {
+    async function postCustomer(formdata) {
         try{
-            const response = await fetch('http://dsdrealestate.herokuapp.com/deals', {
+            const response = await fetch('https://dsdrealestate.herokuapp.com/customers', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -27,8 +30,8 @@ function AddDeal({deals, setDeals}) {
             }
             const json = await response.json()
             if (json.insertedId) {
-                setDeals({...deals, update: !deals.update})
-                navigate('/deals')
+                setCustomers({...customers, update: !customers.update})
+                navigate('/customers')
             }
         }catch(err) {
             setError(err.message)
@@ -36,7 +39,7 @@ function AddDeal({deals, setDeals}) {
     }
     function submitHandler(e) {
         e.preventDefault()
-        postDeal(formdata)
+        postCustomer(formdata)
     }
     function changeHandler(e) {
         setFormdata({...formdata, [e.target.id]: e.target.value})
@@ -44,15 +47,15 @@ function AddDeal({deals, setDeals}) {
     
     return (
         <div className={styles.container}>
-            <Form submitHandler={submitHandler} title='Добави сделка' content={'Запази'}>
-                <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
-                <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
-                <Input  type='text' labelContent='приход' id='income' onChange={changeHandler} value={formdata.income}/>
-                <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
+            {formdata && 
+            <Form submitHandler={submitHandler} title={'Добави клиент'} content={"Запази"}>
+                <Input type='text' labelContent='име' id='name' onChange={changeHandler} value={formdata.name}/>
+                <Input type='text' labelContent='телефон' id='phone' onChange={changeHandler} value={formdata.phone}/>
                 {error && <p>{error.message}</p>}
-            </Form> 
+            </Form>
+            }
         </div>
     )
 }   
 
-export default AddDeal
+export default AddCustomer

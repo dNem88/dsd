@@ -16,6 +16,9 @@ import EditDeal from './components/Deals/EditDeal';
 import CallsPage from './components/Calls/CallsPage';
 import CallsList from './components/Calls/CallsList';
 import AddCall from './components/Calls/AddCall';
+import CustomersPage from './components/Customers/CustomersPage';
+import CustomersList from './components/Customers/CustomersList'
+import AddCustomer from './components/Customers/AddCustomer';
 
 const userContext = React.createContext(null)
 
@@ -26,6 +29,7 @@ function App() {
     const [offers,setOffers] = useState({offers: [], error: null, update: false})
     const [deals, setDeals] = useState({deals: [], error: null, update: false})
     const [calls, setCalls] = useState({calls: [], error: null, update: false})
+    const [customers, setCustomers] = useState({customers: [], error: null, update: false})
 
     useEffect(() => {
        async function FetchOffers() {
@@ -85,6 +89,25 @@ function App() {
        }
        FetchCalls()
     }, [calls.update])
+
+    useEffect(() => {
+       async function FetchCustomers() {
+        try {
+          const response = await fetch('https://dsdrealestate.herokuapp.com/customers', {
+            headers: {
+              'Content-type': 'application/json'
+            }
+          })
+          const json = await response.json()
+          console.log(json)
+          setCustomers({...customers, customers: json, error: null})
+        } catch(e) {
+          console.log(e)
+          setCustomers({...customers, error: true})
+        }
+       }
+       FetchCustomers()
+    }, [customers.update])
     
   return (
     <HashRouter>
@@ -122,6 +145,12 @@ function App() {
                 <Route path={'add'} element={<AddCall calls={calls} setCalls={setCalls}/>}/>
                  <Route path={'stats'} element={<p>Call Stats</p>}/>
                 <Route index element={<CallsList calls={calls}/>}/>
+              </Route>
+               <Route path={'/customers/*'} element={<CustomersPage/>}>
+                <Route path={'add'} element={<AddCustomer customers={customers} setCustomers={setCustomers}/>}/>
+                <Route path={':id'} element={<p>CustomerByID</p>}/>
+                <Route path={':id/edit'} element={<p>Edit Customer</p>}/>
+                <Route index element={<CustomersList customers={customers}/>}/>
               </Route>
             </Fragment>
           }
