@@ -1,0 +1,40 @@
+.container-purple{
+    width: 10vh;
+    height: 10vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-white{
+    width: 10vh;
+    height: 10vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.purple{
+    width: 8vh;
+    height: 8vh;
+    background-color: var(--color-purple);
+    text-decoration: none;
+    border-radius: .35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.white{
+    box-sizing: border-box;
+    width: 8vh;
+    height: 8vh;
+    background-color:white;
+    text-decoration: none;
+    border-radius: .35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-purple);
+    color: var(--color-purple);
+}

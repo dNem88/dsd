@@ -8,6 +8,7 @@ import Customer from '../Customers/Customer'
 import Dial from '../dial/Dial'
 import Title from '../title/Title'
 import FullSpinner from '../FullSpinner/FullSpinner'
+import Maps from '../Maps/Maps'
 
 
 function OfferById({setOffers, offers}) {
@@ -100,7 +101,7 @@ function OfferById({setOffers, offers}) {
              }
              <div className={styles['buttons-container']}>
                  {offer.offer && <Dial phoneNumber={offer.offer.phone}/>}
-                
+                 {offer.offer && <Maps address={''}/>}
              </div>
              {customers.customers && offer.offer &&
                 customers.customers.map(x => {
