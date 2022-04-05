@@ -21,10 +21,15 @@
 .form > input {
     width: 80%;
     height: 5vh;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: .5rem;
     margin-bottom: 1rem;
     padding-left: 1rem;
+   
+}
+.form > input:focus{
+    background-color: var(--color-purple);
+    color: white;
 }
 .submit{
     width: 24vw;
