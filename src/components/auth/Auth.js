@@ -42,13 +42,15 @@ function Auth({setUser}) {
         setPassword(e.target.value)
     }
     return (
-        <form onSubmit={submitHandler} className={styles.form}>
-            <label htmlFor='username' placeholder='username' value={username}></label>
-            <input onChange={changeUsername} type='text' placeholder='потребителско име' value={username} id='username'></input>
-            <label htmlFor='password' ></label>
-            <input onChange={changePassword} type='password' placeholder='парола' value={password} id='password'></input>
-            <button className={styles.submit} type='submit'>ВХОД</button>
-        </form>
+        <div className={styles.main}>
+            <form onSubmit={submitHandler} className={styles.form}>
+                <label htmlFor='username' placeholder='username' value={username}></label>
+                <input onChange={changeUsername} type='text' placeholder='потребителско име' value={username} id='username'></input>
+                <label htmlFor='password' ></label>
+                <input onChange={changePassword} type='password' placeholder='парола' value={password} id='password'></input>
+                <button className={styles.submit} type='submit'>ВХОД</button>
+            </form>
+        </div>
     )
 
 

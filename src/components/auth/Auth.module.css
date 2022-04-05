@@ -1,6 +1,14 @@
+.main{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .form {
     width: 80%;
-    height: 50vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -8,9 +16,7 @@
     justify-content: center;
     background-color: var(--color-purple);
     border-radius: 1rem;
-    align-self: center;
-    justify-self: center;
-    margin-top: 25vh;
+    border: 2px solid white;
 }
 .form > input {
     width: 80%;
@@ -21,15 +27,17 @@
     padding-left: 1rem;
 }
 .submit{
-    width: 20vw;
+    width: 24vw;
     height: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: var(--color-purple);
     font-style: bold;
-    color: var(--color-dark-grey);
+    color: white;
     border-radius: .5rem;
+    border: 2px solid white;
+    margin-top: 3rem;
 }
 
 @media only screen and (min-width: 900px) {
