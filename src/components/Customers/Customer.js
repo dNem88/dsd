@@ -3,7 +3,7 @@ import styles from './Customer.module.css'
 import {useNavigate} from 'react-router-dom'
 import Dial from '../dial/Dial'
 
-function Customer({_id, offer, name, price, hood, address, phone}) {
+function Customer({_id, offer, name, price, hood, address, phone, comment}) {
     const navigate = useNavigate()
 
     function clickHandler(e) {
@@ -18,7 +18,7 @@ function Customer({_id, offer, name, price, hood, address, phone}) {
                     <h3>{`${price} лв`}</h3>
                 </div>
                 <div className={styles['second-row']}>
-                    <h5>{hood}</h5>
+                    <h5>{comment}</h5>
                 </div>
             </div>
         </div>

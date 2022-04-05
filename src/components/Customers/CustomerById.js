@@ -4,6 +4,9 @@ import {useParams, useNavigate} from 'react-router-dom'
 import LinkButton from '../LinkButton/LinkButton'
 import TableRow from '../tableRow/TableRow'
 import Table from '../table/Table'
+import Dial from '../dial/Dial'
+import Title from '../title/Title'
+import FullSpinner from '../FullSpinner/FullSpinner'
 
 
 function CustomerById({setCustomers, customers}) {
@@ -53,11 +56,13 @@ function CustomerById({setCustomers, customers}) {
        
     }
    
-    console.log(customer)
+    if (customer.customer) {
     return (
         <div className={styles.container}>
+            <Dial phoneNumber={customer.customer && customer.customer.phone}/>
             {customer.customer &&
                 <Fragment>
+                    <Title content={'Клиент'}/>
                     <Table>
                             {customer.customer && 
                                 Object.entries(customer.customer).map(x => {
@@ -71,7 +76,9 @@ function CustomerById({setCustomers, customers}) {
 
              }
         </div>
-    )
+    )} else {
+        return <FullSpinner/>
+    }
 }
 
 export default CustomerById

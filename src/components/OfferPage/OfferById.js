@@ -1,11 +1,13 @@
 import React, {useState, useEffect, Fragment} from 'react'
 import styles from './OfferById.module.css'
 import {useParams, useNavigate} from 'react-router-dom'
-import ErrorComp from '../errorComp/ErrorComp'
 import LinkButton from '../LinkButton/LinkButton'
 import TableRow from '../tableRow/TableRow'
 import Table from '../table/Table'
 import Customer from '../Customers/Customer'
+import Dial from '../dial/Dial'
+import Title from '../title/Title'
+import FullSpinner from '../FullSpinner/FullSpinner'
 
 
 function OfferById({setOffers, offers}) {
@@ -77,13 +79,15 @@ function OfferById({setOffers, offers}) {
     function addDeal() {
         navigate('/deals/add')
     }
-    console.log(offer)
-    return (
+    
+    if (offer.offer && customers.customers) {
+        return (
         <div className={styles.container}>
             {offer.offer &&
                 <Fragment>
                      <LinkButton href={``} clickHandler={() => {navigate(`/customers/${id}/add`)}} image={'add'} content={'клиент'}/>
                     <LinkButton href={``} clickHandler={addDeal} content={'сделка'} image={'add'}/>
+                    <Title content={'Оферта'}/>
                     <Table>
                             {offer.offer && 
                                 Object.entries(offer.offer).map(x => {
@@ -91,18 +95,26 @@ function OfferById({setOffers, offers}) {
                                 })
                             }
                     </Table>
-                     <LinkButton href={``} clickHandler={() => {navigate(`/offers/${id}/edit`)}} image={'edit'} content={'промени'}/>
-                    <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
                 </Fragment>
 
              }
+             <div className={styles['buttons-container']}>
+                 {offer.offer && <Dial phoneNumber={offer.offer.phone}/>}
+                
+             </div>
              {customers.customers && offer.offer &&
                 customers.customers.map(x => {
                     return <Customer key={x._id} {...x} hood={offer.offer.hood} address={offer.offer.address} price={offer.offer.price}/>
                 })
              }
+            <LinkButton href={``} clickHandler={() => {navigate(`/offers/${id}/edit`)}} image={'edit'} content={'промени'}/>
+             <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
         </div>
     )
+    } else {
+        return <FullSpinner/>
+    }
+    
 }
 
 export default OfferById

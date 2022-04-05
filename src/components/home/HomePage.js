@@ -5,6 +5,7 @@ import Offer from './Offer'
 import Spinner from '../spinner/Spinner'
 import ErrorComp from '../errorComp/ErrorComp'
 import {useNavigate} from 'react-router-dom'
+import Title from '../title/Title'
 
 function HomePage({offers}) {
     console.log(offers)
@@ -12,7 +13,7 @@ function HomePage({offers}) {
     
     return (
         <div className={styles.container}>
-            <LinkButton href={'/offers/add'} content={'добави'} clickHandler={() => {navigate('/offers/add')}} image={'add'}/>
+            <Title content={'Оферти'} button={<LinkButton href={'/offers/add'} content={'добави'} clickHandler={() => {navigate('/offers/add')}} image={'add'}/>} options={{height: '6vh', width: '90%', justifyContent: 'space-between'}}/>
             {!offers.error ? offers ? offers.offers.map((x,i) => {
                 return <Offer key={i} _id={x._id} phone={x.phone} hood={x.hood || 'N/A'} price={x.price || 'N/A'} address={x.address || 'N/A'}/>
             }) : <Spinner/> : <ErrorComp errorMessage={'Failed to fetch'}/>}

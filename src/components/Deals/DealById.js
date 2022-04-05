@@ -4,6 +4,8 @@ import {useNavigate, useParams} from 'react-router-dom'
 import LinkButton from '../LinkButton/LinkButton'
 import Table from '../table/Table'
 import TableRow from '../tableRow/TableRow'
+import Title from '../title/Title'
+import FullSpinner from '../FullSpinner/FullSpinner'
 
 function DealById({deals, setDeals}) {
     const navigate = useNavigate()
@@ -57,10 +59,13 @@ function DealById({deals, setDeals}) {
     function editDeal() {
         navigate(`/deals/${id}/edit`)
     }
+
+    if (deal.deal) {
     return (
         <div className={styles.container}>
             <LinkButton href={``} content={'промени'} image={'edit'} clickHandler={editDeal}/>
             <LinkButton href={``} content={'добави'} image={'add'} clickHandler={addDeal}/>
+            <Title content={'Сделка'}/>
             <Table>
                 {deal.deal && 
                     Object.entries(deal.deal).map(x => {
@@ -70,7 +75,9 @@ function DealById({deals, setDeals}) {
             </Table>
             <LinkButton href={``} content={'изтрий'} image={'del'} clickHandler={onDelete}/>
         </div>
-    )
+    )} else {
+        return <FullSpinner/>
+    }
 }
 
 export default DealById

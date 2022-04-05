@@ -20,6 +20,7 @@
     background-color:var(--color-purple);
     color: white;
     text-decoration: none;
+    margin: 1rem;
 }
 
 .image-container{
@@ -29,4 +30,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: .5rem;
 }
