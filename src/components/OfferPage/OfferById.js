@@ -101,7 +101,7 @@ function OfferById({setOffers, offers}) {
              }
              <div className={styles['buttons-container']}>
                  {offer.offer && <Dial phoneNumber={offer.offer.phone}/>}
-                 {offer.offer && <Maps address={''}/>}
+                 {offer.offer && <Maps address={offer.offer.address}/>}
              </div>
              {customers.customers && offer.offer &&
                 customers.customers.map(x => {

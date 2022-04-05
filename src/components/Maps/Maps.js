@@ -6,7 +6,7 @@ function Maps({address, color='white'}) {
 
     return (
         <div className={styles[`container-${color}`]}>
-            <a className={styles[color]} href={`https://www.google.com/maps/search/?api=1&query=${encodeURI(address) || encodeURI('ул Стефан Диечев 4')}`}>
+            <a className={styles[color]} href={`https://www.google.com/maps/search/?api=1&query=${encodeURI(`София ${address}`) || encodeURI('ул Стефан Дичев 4')}`}>
                 <img src={maps}/>
             </a>
         </div>
