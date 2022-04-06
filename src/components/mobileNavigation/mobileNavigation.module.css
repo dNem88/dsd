@@ -25,6 +25,7 @@
 .user{
     height: 100%;
     width: 25vw;
+    margin-right: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;

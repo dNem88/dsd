@@ -3,11 +3,11 @@ import styles from './Offer.module.css'
 import {useNavigate} from 'react-router-dom'
 import Dial from '../dial/Dial'
 
-function Offer({_id, hood, price, address, phone}) {
+function Offer({_id, hood, price, address, phone, href}) {
     const navigate = useNavigate()
 
     function clickHandler(e) {
-        navigate(`/offers/${_id}`)
+        navigate(`/${href}/${_id}`)
     }
     return (
         <div className={styles.container} >

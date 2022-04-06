@@ -1,8 +1,10 @@
 import React, {Fragment, useState, useContext, useEffect} from 'react'
 import './App.css';
 import {HashRouter, Routes, Route} from 'react-router-dom'
+
 import Navigation from './components/navigation/Navigation'
 import MobileNavigation from './components/mobileNavigation/MobileNavigation';
+
 import Auth from './components/auth/Auth'
 import HomePage from './components/home/HomePage';
 import AddOffer from './components/home/AddOffer';
@@ -20,6 +22,8 @@ import CustomersPage from './components/Customers/CustomersPage';
 import CustomersList from './components/Customers/CustomersList'
 import AddCustomer from './components/Customers/AddCustomer';
 import CustomerById from './components/Customers/CustomerById';
+import ArchivePage from './components/Archive/ArchivePage';
+import ArchiveById from './components/Archive/ArchiveById';
 
 const userContext = React.createContext(null)
 
@@ -41,15 +45,16 @@ function App() {
             }
           })
           const json = await response.json()
-          console.log(json)
           setOffers({...offers, offers: json, error: null})
         } catch(e) {
-          console.log(e)
           setOffers({...offers, error: true})
         }
        }
-       FetchOffers()
-    }, [offers.update])
+       if (user ) {
+         FetchOffers()
+
+       }
+    }, [offers.update, user])
 
     useEffect(() => {
         async function Fetch() {
@@ -64,13 +69,16 @@ function App() {
                 }
                 let json = await response.json()
                 setDeals({...deals, deals: json, error: null})
-                console.log(json)
+                
             }catch(err) {
                 setDeals({...deals, error: err.message})
             }
         }
-        Fetch()
-    }, [deals.update])
+        if (user) {
+
+          Fetch()
+        }
+    }, [deals.update, user])
 
      useEffect(() => {
        async function FetchCalls() {
@@ -88,8 +96,11 @@ function App() {
           setCalls({...calls, error: true})
         }
        }
-       FetchCalls()
-    }, [calls.update])
+       if (user) {
+         FetchCalls()
+
+       }
+    }, [calls.update, user])
 
     useEffect(() => {
        async function FetchCustomers() {
@@ -100,15 +111,17 @@ function App() {
             }
           })
           const json = await response.json()
-          console.log(json)
+         
           setCustomers({...customers, customers: json, error: null})
         } catch(e) {
-          console.log(e)
+          
           setCustomers({...customers, error: true})
         }
        }
-       FetchCustomers()
-    }, [customers.update])
+       if (user) {
+         FetchCustomers()
+       }
+    }, [customers.update, user])
     
   return (
     <HashRouter>
@@ -135,6 +148,8 @@ function App() {
               <Route path={'/offers/add'} element={<AddOffer setOffers={setOffers} offers={offers}/>}/>
               <Route path={'/offers/:id'} element={<OfferById setOffers={setOffers} offers={offers}/>}/>
               <Route path={'/offers/:id/edit'} element={<EditOffer setOffers={setOffers} offers={offers}/>}/>
+              <Route path={'/offers/archive'} element={<ArchivePage/>}/>
+              <Route path={'/archive/:id'} element={<ArchiveById  setOffers={setOffers} offers={offers}/>}/>
               <Route path={'/deals/*'} element={<DealsPage/>}>
                 <Route path={'add'} element={<AddDeal deals={deals} setDeals={setDeals}/>}/>
                 <Route path={':id'} element={<DealById deals={deals} setDeals={setDeals}/>}/>

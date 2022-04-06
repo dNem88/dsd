@@ -21,6 +21,9 @@ const navigation = {
         {
             href: '/stats',
             content: 'Статистика'
+        }, {
+            href: '/offers/archive',
+            content: 'Архив'
         }
         ]
 }

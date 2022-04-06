@@ -77,6 +77,27 @@ function OfferById({setOffers, offers}) {
         }
        
     }
+    async function Archive(e) {
+        try{
+            const response = await fetch(`https://dsdrealestate.herokuapp.com/offers/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({_id: id, active: 'false'})
+            })
+            if (!response.ok) {
+                throw new Error('Failed to delete!')
+            }
+            setOffers({
+                ...offers,
+                update: !offers.update
+            })
+            navigate('/offers/archive')
+        }catch(e) {
+            return e
+        }
+    }
     function addDeal() {
         navigate('/deals/add')
     }
@@ -86,7 +107,7 @@ function OfferById({setOffers, offers}) {
         <div className={styles.container}>
             {offer.offer &&
                 <Fragment>
-                     <LinkButton href={``} clickHandler={() => {navigate(`/customers/${id}/add`)}} image={'add'} content={'клиент'}/>
+                    <LinkButton href={``} clickHandler={() => {navigate(`/customers/${id}/add`)}} image={'add'} content={'клиент'}/>
                     <LinkButton href={``} clickHandler={addDeal} content={'сделка'} image={'add'}/>
                     <Title content={'Оферта'}/>
                     <Table>
@@ -109,7 +130,8 @@ function OfferById({setOffers, offers}) {
                 })
              }
             <LinkButton href={``} clickHandler={() => {navigate(`/offers/${id}/edit`)}} image={'edit'} content={'промени'}/>
-             <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
+            <LinkButton href={``} clickHandler={Archive} image={'edit'} content={'архивирай'}/>
+            <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
         </div>
     )
     } else {

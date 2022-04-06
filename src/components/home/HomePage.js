@@ -6,19 +6,24 @@ import Spinner from '../spinner/Spinner'
 import ErrorComp from '../errorComp/ErrorComp'
 import {useNavigate} from 'react-router-dom'
 import Title from '../title/Title'
+import FullSpinner from '../FullSpinner/FullSpinner'
 
 function HomePage({offers}) {
-    console.log(offers)
+    
     const navigate = useNavigate()
     
+    if (offers.offers) {
     return (
         <div className={styles.container}>
             <Title content={'Оферти'} button={<LinkButton href={'/offers/add'} content={'добави'} clickHandler={() => {navigate('/offers/add')}} image={'add'}/>}/>
-            {!offers.error ? offers ? offers.offers.map((x,i) => {
-                return <Offer key={i} _id={x._id} phone={x.phone} hood={x.hood || 'N/A'} price={x.price || 'N/A'} address={x.address || 'N/A'}/>
-            }) : <Spinner/> : <ErrorComp errorMessage={'Failed to fetch'}/>}
+            {!offers.error  ? offers.offers.map((x,i) => {
+                return <Offer href={'offers'} key={i} _id={x._id} phone={x.phone} hood={x.hood || 'N/A'} price={x.price || 'N/A'} address={x.address || 'N/A'}/>
+            }) : <ErrorComp errorMessage={'Failed to fetch'}/>}
         </div>
     )
+    } else {
+        return <FullSpinner/>
+    }
 }   
 
 export default HomePage
