@@ -1,16 +1,18 @@
 .tr{
     width: 100%;
-    height: fit-content;
+    height: max-content;
     background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid var(--color-grey)
+    border-top: 1px solid var(--color-grey);
+    padding-top: .45rem;
+    padding-bottom: .45rem;
 }
 .tr > :nth-child(1) {
     width: 35%;
-    height: 2rem;
+    height: max-content;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -18,7 +20,7 @@
 }
 .tr > :nth-child(2) {
     width: 60%;
-    height: 2rem;
+    height: max-content;
     display: flex;
     align-items: center;
     justify-content: flex-start;
