@@ -24,6 +24,7 @@ import AddCustomer from './components/Customers/AddCustomer';
 import CustomerById from './components/Customers/CustomerById';
 import ArchivePage from './components/Archive/ArchivePage';
 import ArchiveById from './components/Archive/ArchiveById';
+import StatsPage from './components/StatsPage/StatsPage';
 
 const userContext = React.createContext(null)
 
@@ -158,7 +159,6 @@ function App() {
               </Route>
               <Route path={'/calls/*'} element={<CallsPage/>}>
                 <Route path={'add'} element={<AddCall calls={calls} setCalls={setCalls}/>}/>
-                 <Route path={'stats'} element={<p>Call Stats</p>}/>
                 <Route index element={<CallsList calls={calls}/>}/>
               </Route>
                <Route path={'/customers/*'} element={<CustomersPage/>}>
@@ -167,6 +167,7 @@ function App() {
                 <Route path={':id/edit'} element={<p>Edit Customer</p>}/>
                 <Route index element={<CustomersList customers={customers}/>}/>
               </Route>
+              <Route path={'/stats'} element={<StatsPage/>}/>
             </Fragment>
           }
         </Routes>

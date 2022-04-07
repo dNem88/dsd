@@ -1,18 +1,25 @@
-import React, {useState} from 'react'
+import React, {useState, Fragment} from 'react'
 import styles from './Select.module.css'
 
-function Select({options}) {
-    const [selected, setSelected] = useState(null)
-    console.log(options)
+function Select({options, defaultSelected='', label, setFormdata}) {
+    const [selected, setSelected] = useState({value: defaultSelected})
+
     function changeHandler(e) {
-        setSelected()
+        setSelected({value: e.target.value})
+        setFormdata(e.target.value)
     }
     return (
-        <select value={selected} onCahnge={changeHandler}>
-            {options.map(x => {
-                return <option selected={x._id === selected._id} id={x._id}>{`${x.hood} ${x.price}`}</option>
-            })}
-        </select>
+        <Fragment>
+            <label className={styles.label}>
+                {label}
+                <select className={styles.select} value={selected.value} onChange={changeHandler}>
+                    {options.map((x,i)=> {
+                    return <option key={x.toString() + i} value={x}>{x}</option>
+                    })}
+                </select>
+            </label>
+        </Fragment>
+        
     )
 }
 

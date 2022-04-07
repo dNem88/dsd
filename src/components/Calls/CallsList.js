@@ -11,7 +11,7 @@ function CallsList({calls}) {
         navigate('/calls/add')
     }
      function viewStats() {
-        navigate('/calls/stats')
+        navigate('/stats')
     }
     return (
         <Fragment>
@@ -20,7 +20,7 @@ function CallsList({calls}) {
                 <LinkButton clickHandler={viewStats} href='' content={'статистика'} image={'edit'}/>
             </div>
             {calls.calls && calls.calls.map(x => {
-                return <Call key={x._id} _id={x._id} calls={x.calls || 'N/A'} valid={x.valid || 'N/A'} date={x.date || ''} />
+                return <Call key={x._id} _id={x._id} calls={x.calls || 'N/A'} valid={x.valid || 'N/A'} date={x.createdAt || ''} />
             } )}
         </Fragment>
             

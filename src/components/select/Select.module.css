@@ -1,0 +1,11 @@
+.select {
+    width: 40vw;
+    height: 4vh;
+    margin-left: 1rem;
+}
+.label{
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
