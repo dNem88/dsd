@@ -1,7 +1,9 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, Fragment} from 'react'
 import styles from './StatsPage.module.css'
 import Select from '../select/Select'
 import Form from '../form/Form'
+import StatsResult from './StatsResult'
+import Title from '../title/Title'
 
 const collections = ['','оферти', 'клиенти', 'обаждания', 'сделки']
 const months = ['', 'януари', 'февруари', 'март', 'април', 'май', 'юни', 'юли', 'август', 'септември', 'октомври', 'ноември', 'декември']
@@ -22,9 +24,9 @@ function StatsPage() {
             month: month
         }
         console.log(formdata)
-        // 'https://dsdrealestate.herokuapp.com/stats'
+       
         try {
-            const response = await fetch('http://localhost:4000/stats', {
+            const response = await fetch('https://dsdrealestate.herokuapp.com/stats', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
@@ -43,14 +45,23 @@ function StatsPage() {
         }
     }
     return (
-        <div className={styles.container}>
-            <Form title='Избери' submitHandler={onSubmit} content={'запази'}>
-                <Select options={collections} defaultSelected={''} label={'колекция'} setFormdata={setCollection}/>
-                <Select options={years} defaultSelected={new Date().getFullYear()} label={'година'} setFormdata={setYear}/>
-                <Select options={months} defaultSelected={''} label={'месец'} setFormdata={setMonth}/>
-                {error && <p className={styles.error}>{error.errorMessage}</p>}
-            </Form>
-        </div>
+        <Fragment>
+            <Title content={'СТАТИСТИКА'}/>
+            <div className={styles.container}>
+                <Form title='Избери' submitHandler={onSubmit} content={'запази'}>
+                    <Select options={collections} defaultSelected={''} label={'колекция'} setFormdata={setCollection} setStats={setStats}/>
+                    <Select options={years} defaultSelected={new Date().getFullYear()} label={'година'} setFormdata={setYear} setStats={setStats}/>
+                    <Select options={months} defaultSelected={''} label={'месец'} setFormdata={setMonth} setStats={setStats}/>
+                    {error && <p className={styles.error}>{error.errorMessage}</p>}
+                </Form>
+            </div>
+            {stats && 
+                <div className={styles['result-container']}>
+                    {stats && <StatsResult stats={stats} collection={collection} year={year} month={month}/>}
+                </div>
+            }
+            
+        </Fragment>
     )
 }
 

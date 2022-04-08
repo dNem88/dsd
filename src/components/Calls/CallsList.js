@@ -19,7 +19,8 @@ function CallsList({calls}) {
                 <LinkButton clickHandler={addCall} href='' content={'добави'} image={'add'}/>
                 <LinkButton clickHandler={viewStats} href='' content={'статистика'} image={'edit'}/>
             </div>
-            {calls.calls && calls.calls.map(x => {
+            {
+                calls.calls && calls.calls.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map(x => {
                 return <Call key={x._id} _id={x._id} calls={x.calls || 'N/A'} valid={x.valid || 'N/A'} date={x.createdAt || ''} />
             } )}
         </Fragment>

@@ -1,12 +1,13 @@
 import React, {useState, Fragment} from 'react'
 import styles from './Select.module.css'
 
-function Select({options, defaultSelected='', label, setFormdata}) {
+function Select({options, defaultSelected='', label, setFormdata, setStats}) {
     const [selected, setSelected] = useState({value: defaultSelected})
 
     function changeHandler(e) {
         setSelected({value: e.target.value})
         setFormdata(e.target.value)
+        setStats(null)
     }
     return (
         <Fragment>

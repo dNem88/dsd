@@ -1,0 +1,46 @@
+.container{
+    width: 90vw;
+    height: 11vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.key{
+    width: 70%;
+    height: 10vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--color-purple)
+}
+.key > p{
+    margin: 0;
+    padding: 0;
+    color: var(--color-dark-grey);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.value{
+    width: 10vh;
+    height: 10vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.value > p{
+    width: 8vh;
+    height: 8vh;
+    background-color: var(--color-purple);
+    text-decoration: none;
+    border-radius: .35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}

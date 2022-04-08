@@ -33,7 +33,7 @@ function ArchivePage() {
     return (
         <div className={styles.container}>
             <Title content={'Архив'} />
-            {!archive.error ? archive.archive ? archive.archive.map((x,i) => {
+            {!archive.error ? archive.archive ? archive.archive.sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt)).map((x,i) => {
                 return <Offer key={i} href={'archive'} _id={x._id} phone={x.phone} hood={x.hood || 'N/A'} price={x.price || 'N/A'} address={x.address || 'N/A'}/>
             }) : <FullSpinner/> : <ErrorComp errorMessage={'Failed to fetch'}/>}
         </div>

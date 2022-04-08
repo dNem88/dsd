@@ -49,7 +49,6 @@ function AddDeal({deals, setDeals}) {
                 <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
                 <Input  type='text' labelContent='приход' id='income' onChange={changeHandler} value={formdata.income}/>
                 <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
-                {/* {error && <p>{error.message}</p>} */}
             </Form> 
         </div>
     )

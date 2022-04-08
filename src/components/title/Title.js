@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './Title.module.css'
 
-function Title({content, button='', options}) {
+function Title({content, button=''}) {
     return (
         <div className={styles.wrapper} >
             <h2>{content}</h2>
