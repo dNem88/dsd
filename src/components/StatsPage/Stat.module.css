@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     background-color: white;
+   
 }
 
 .key{
@@ -19,8 +20,8 @@
 .key > p{
     margin: 0;
     padding: 0;
-    color: var(--color-dark-grey);
-    font-size: 1.4rem;
+    color: var(--color-grey);
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -44,3 +45,4 @@
     justify-content: center;
     color: white;
 }
+

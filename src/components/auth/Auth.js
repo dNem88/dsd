@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import loginUser from '../../utils/auth/auth'
 import styles from './Auth.module.css'
 

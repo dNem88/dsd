@@ -44,9 +44,9 @@
     width: 20%;
 }
 .first-row > :nth-child(3) {
-    width: 5vh;
-    height: 3.5vh;
-    background-color: rgb(110, 234, 110);
+    width: 7vh;
+    height: 4.7vh;
+    background-color: var(--color-purple);
     color: white;
     display: flex;
     align-items: center;

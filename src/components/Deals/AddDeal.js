@@ -26,10 +26,9 @@ function AddDeal({deals, setDeals}) {
                 throw new Error('Failed to post data')
             }
             const json = await response.json()
-            if (json.insertedId) {
-                setDeals({...deals, update: !deals.update})
-                navigate('/deals')
-            }
+            setDeals({...deals, update: !deals.update})
+            navigate('/deals')
+            
         }catch(err) {
             setError(err.message)
         }
@@ -44,7 +43,7 @@ function AddDeal({deals, setDeals}) {
     
     return (
         <div className={styles.container}>
-            <Form submitHandler={submitHandler} title='Добави сделка' content={'Запази'}>
+            <Form submitHandler={submitHandler} title='Добави сделка' content={'Добави'}>
                 <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
                 <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
                 <Input  type='text' labelContent='приход' id='income' onChange={changeHandler} value={formdata.income}/>

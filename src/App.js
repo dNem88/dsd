@@ -10,20 +10,26 @@ import HomePage from './components/home/HomePage';
 import AddOffer from './components/home/AddOffer';
 import OfferById from './components/OfferPage/OfferById';
 import EditOffer from './components/EditOffer/EditOffer';
+
 import DealsPage from './components/Deals/DealsPage';
 import DealsList from './components/Deals/DealsList';
 import DealById from './components/Deals/DealById';
 import AddDeal from './components/Deals/AddDeal';
 import EditDeal from './components/Deals/EditDeal';
+
 import CallsPage from './components/Calls/CallsPage';
 import CallsList from './components/Calls/CallsList';
 import AddCall from './components/Calls/AddCall';
+
 import CustomersPage from './components/Customers/CustomersPage';
 import CustomersList from './components/Customers/CustomersList'
 import AddCustomer from './components/Customers/AddCustomer';
 import CustomerById from './components/Customers/CustomerById';
+import EditCustomer from './components/Customers/EditCustomer';
+
 import ArchivePage from './components/Archive/ArchivePage';
 import ArchiveById from './components/Archive/ArchiveById';
+
 import StatsPage from './components/StatsPage/StatsPage';
 
 const userContext = React.createContext(null)
@@ -164,7 +170,7 @@ function App() {
                <Route path={'/customers/*'} element={<CustomersPage/>}>
                 <Route path={':id/add'} element={<AddCustomer customers={customers} setCustomers={setCustomers}/>}/>
                 <Route path={':id'} element={<CustomerById customers={customers} setCustomers={setCustomers}/>}/>
-                <Route path={':id/edit'} element={<p>Edit Customer</p>}/>
+                <Route path={':id/edit'} element={<EditCustomer setCustomers={setCustomers} customers={customers}/>}/>
                 <Route index element={<CustomersList customers={customers}/>}/>
               </Route>
               <Route path={'/stats'} element={<StatsPage/>}/>
