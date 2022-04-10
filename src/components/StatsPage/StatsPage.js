@@ -45,7 +45,7 @@ function StatsPage() {
         }
     }
     return (
-        <Fragment>
+        <div className={styles.main}>
             <Title content={'СТАТИСТИКА'}/>
             <div className={styles.container}>
                 <Form title='Избери' submitHandler={onSubmit} content={'запази'}>
@@ -61,7 +61,7 @@ function StatsPage() {
                 </div>
             }
             
-        </Fragment>
+        </div>
     )
 }
 

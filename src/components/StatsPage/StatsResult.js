@@ -54,9 +54,9 @@ function StatsResult({stats, collection, year, month}) {
             <Title content={`${collection.toUpperCase()} за ${month ? month.toUpperCase() : ''} ${year}`}/>
             <div className={styles['thead']}>
                 <div></div>
-                <p>резултат</p>
+                <p>рез</p>
                 <p>таргет</p>
-                <p>изпълнение</p>
+                <p></p>
             </div>
             {stats && result && Object.entries(result).map(x =>  {
                 return <Stat key={x[0]} keyField={x[0].split('_').join(' ')} value={x[1]} period={month ? 'month' : 'year'}/>
