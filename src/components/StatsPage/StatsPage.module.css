@@ -14,16 +14,14 @@
     box-sizing: border-box;
     padding-top: 1rem;
     padding-left: 1rem;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    border: 2px solid var(--color-purple);
-    border-radius: .5rem;
+    margin-bottom: 3rem;
     margin-top: 1rem;
-    overflow: scroll;
      animation-name: fade;
     animation-duration: .6s;
 }

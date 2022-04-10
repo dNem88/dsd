@@ -43,12 +43,14 @@ function AddDeal({deals, setDeals}) {
     
     return (
         <div className={styles.container}>
-            <Form submitHandler={submitHandler} title='Добави сделка' content={'Добави'}>
-                <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
-                <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
-                <Input  type='text' labelContent='приход' id='income' onChange={changeHandler} value={formdata.income}/>
-                <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
-            </Form> 
+            {formdata &&
+                <Form submitHandler={submitHandler} title='Добави сделка' content={'добави'}>
+                    <Input type='text' labelContent='квартал' id='hood' onChange={changeHandler} value={formdata.hood}/>
+                    <Input type='text' labelContent='адрес' id='address' onChange={changeHandler} value={formdata.address}/>
+                    <Input  type='text' labelContent='приход' id='income' onChange={changeHandler} value={formdata.income}/>
+                    <Input  type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
+                </Form> 
+            }
         </div>
     )
 }   

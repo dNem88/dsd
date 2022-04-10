@@ -1,5 +1,5 @@
 .container{
-    width: 90vw;
+    width: 95vw;
     height: 11vh;
     display: flex;
     align-items: center;
@@ -9,7 +9,7 @@
 }
 
 .key{
-    width: 70%;
+    width: 40%;
     height: 10vh;
     background-color: white;
     display: flex;
@@ -20,9 +20,10 @@
 .key > p{
     margin: 0;
     padding: 0;
-    color: var(--color-grey);
+    color: var(--color-dark-grey);
     font-size: 1rem;
     font-weight: bold;
+
 }
 
 .value{
@@ -32,6 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: .5rem;
 }
 
 .value > p{
@@ -44,5 +46,51 @@
     align-items: center;
     justify-content: center;
     color: white;
+    font-weight: bold;
 }
 
+.target{
+    width: 10vh;
+    height: 10vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: .5rem;
+}
+
+.target > p{
+    box-sizing: border-box;
+    width: 8vh;
+    height: 8vh;
+    background-color: white;
+    text-decoration: none;
+    border-radius: .35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-purple);
+    border: 1px solid var(--color-purple);
+    font-weight: bold;
+}
+.completion{
+    width: 10vh;
+    height: 10vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.completion > p{
+    width: 8vh;
+    height: 8vh;
+    background-color: var(--color-purple);
+    text-decoration: none;
+    border-radius: .35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}

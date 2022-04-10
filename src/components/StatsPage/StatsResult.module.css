@@ -7,5 +7,39 @@
     flex-wrap: wrap;
 }
 .container > div > h2{
-    color: var(--color-dark-grey);
+    color: white;
+    background-color: var(--color-purple);
+    padding: .3rem;
+    height: max-content;
+    width: 100vw;
+    border-top-left-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 1.4rem;
+}
+.thead{
+    width: 95vw;
+    height: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: var(--color-purple);
+}
+.thead > p {
+    width: 10vh;
+    color: var(--color-purple);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+.thead > div{
+    width: 35%;
+    height: 4vh;
 }

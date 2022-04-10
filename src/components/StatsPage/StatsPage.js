@@ -23,7 +23,7 @@ function StatsPage() {
             year: year,
             month: month
         }
-        console.log(formdata)
+       
        
         try {
             const response = await fetch('https://dsdrealestate.herokuapp.com/stats', {

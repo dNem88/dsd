@@ -32,7 +32,7 @@ function EditCustomer({setCustomers, customers}) {
     async function submitHandler(e) {
         e.preventDefault()
         try{
-            const response = await fetch(`https://dsdrealestate.herokuapp.com/customers/offer/${id}`, {
+            const response = await fetch(`https://dsdrealestate.herokuapp.com/customers/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -60,9 +60,9 @@ function EditCustomer({setCustomers, customers}) {
         <div className={styles.container}>
             {formdata && 
             <Form submitHandler={submitHandler} title={'Промени клиент'} content={"Запази"}>
-                <Input type='text' labelContent='име' id='name' onChange={changeHandler} value={formdata.hood}/>
-                <Input type='text' labelContent='телефон' id='phone' onChange={changeHandler} value={formdata.address}/>
-                <Input type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.owner}/>
+                <Input type='text' labelContent='име' id='name' onChange={changeHandler} value={formdata.name}/>
+                <Input type='text' labelContent='телефон' id='phone' onChange={changeHandler} value={formdata.phone}/>
+                <Input type='text' labelContent='коментар' id='comment' onChange={changeHandler} value={formdata.comment}/>
                 {error && <p>{error.message}</p>}
             </Form>
             }
