@@ -44,3 +44,8 @@
     width: 40%;
     height: 4vh;
 }
+.thead > :nth-child(4){
+    width: 16vh;
+    height: 4vh;
+}
+
