@@ -13,10 +13,11 @@ function AddDeal({deals, setDeals}) {
         income: '',
         comment: ''
     })
-    
+    const url = 'http://dsdrealestate.herokuapp.com/deals'
     async function postDeal(formdata) {
+        
         try{
-            const response = await fetch('http://dsdrealestate.herokuapp.com/deals', {
+            const response = await fetch('http:localhost:4000/deals', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

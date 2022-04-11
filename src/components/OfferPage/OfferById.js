@@ -49,7 +49,7 @@ function OfferById({setOffers, offers}) {
                     throw new Error('Failed to get offer!')
                 }
                 let json = await response.json()
-                console.log(json)
+                
                 setCustomers({...customers, customers: json})
             }catch(e) {
                 setCustomers({...customers, error: true, errorMessage: e.message})
@@ -57,7 +57,7 @@ function OfferById({setOffers, offers}) {
         }
         FetchCustomers()
     }, [])
-    console.log(customers)
+    
     async function onDelete() {
          try{
             const response = await fetch('https://dsdrealestate.herokuapp.com/offers', {

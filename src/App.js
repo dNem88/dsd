@@ -169,8 +169,8 @@ function App() {
               </Route>
                <Route path={'/customers/*'} element={<CustomersPage/>}>
                 <Route path={':id/add'} element={<AddCustomer customers={customers} setCustomers={setCustomers}/>}/>
-                <Route path={':id'} element={<CustomerById customers={customers} setCustomers={setCustomers}/>}/>
                 <Route path={':id/edit'} element={<EditCustomer setCustomers={setCustomers} customers={customers}/>}/>
+                <Route path={':id'} element={<CustomerById customers={customers} setCustomers={setCustomers}/>}/>
                 <Route index element={<CustomersList customers={customers}/>}/>
               </Route>
               <Route path={'/stats'} element={<StatsPage/>}/>

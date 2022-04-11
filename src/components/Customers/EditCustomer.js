@@ -19,7 +19,7 @@ function EditCustomer({setCustomers, customers}) {
                     }
                 })
                 if (!response.ok) {
-                    throw new Error('Failed to get offer!')
+                    throw new Error('Failed to get customer!')
                 }
                 let json = await response.json()
                 setFormdata(json)
