@@ -13,11 +13,11 @@ function AddDeal({deals, setDeals}) {
         income: '',
         comment: ''
     })
-    const url = 'http://dsdrealestate.herokuapp.com/deals'
+   
     async function postDeal(formdata) {
         
         try{
-            const response = await fetch('http:localhost:4000/deals', {
+            const response = await fetch('http://dsdrealestate.herokuapp.com/deals', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -28,16 +28,18 @@ function AddDeal({deals, setDeals}) {
                 throw new Error('Failed to post data')
             }
             const json = await response.json()
+            console.log(json)
             setDeals({...deals, update: !deals.update})
             navigate('/deals')
             
         }catch(err) {
+            console.log(err)
             setError(err.message)
         }
     }
     function submitHandler(e) {
-        e.preventDefault()
-        postDeal(formdata)
+       e.preventDefault()
+       postDeal(formdata)
     }
     function changeHandler(e) {
         setFormdata({...formdata, [e.target.id]: e.target.value})
