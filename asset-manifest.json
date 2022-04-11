@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/dsd/static/css/main.fb698125.css",
+    "main.css": "/dsd/static/css/main.f0b1eb2b.css",
     "main.js": "/dsd/static/js/main.65d4dd88.js",
     "static/js/787.3c90e107.chunk.js": "/dsd/static/js/787.3c90e107.chunk.js",
     "static/media/phonewhite.svg": "/dsd/static/media/phonewhite.60a82255e2ab2473604de227ea559953.svg",
@@ -10,12 +10,12 @@
     "static/media/edit.svg": "/dsd/static/media/edit.66054aa3c8ddde975c402aced50291a4.svg",
     "index.html": "/dsd/index.html",
     "static/media/add.svg": "/dsd/static/media/add.024ca37231756d77f3712e4744a54fa5.svg",
-    "main.fb698125.css.map": "/dsd/static/css/main.fb698125.css.map",
+    "main.f0b1eb2b.css.map": "/dsd/static/css/main.f0b1eb2b.css.map",
     "main.65d4dd88.js.map": "/dsd/static/js/main.65d4dd88.js.map",
     "787.3c90e107.chunk.js.map": "/dsd/static/js/787.3c90e107.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb698125.css",
+    "static/css/main.f0b1eb2b.css",
     "static/js/main.65d4dd88.js"
   ]
 }
