@@ -98,7 +98,7 @@
 @media only screen and (max-width: 900px) and (orientation: landscape) {
     .completion{
         width: 3.5rem;
-        background-color: pink;
+       
     }
     .completion > p{
         width: 3.5rem;
