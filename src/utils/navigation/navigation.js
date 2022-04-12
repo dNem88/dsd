@@ -16,7 +16,7 @@ const navigation = {
         },
         {
             href: '/calls',
-            content: 'Колс'
+            content: 'Обаждания'
         },
         {
             href: '/stats',

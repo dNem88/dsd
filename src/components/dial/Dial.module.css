@@ -36,3 +36,21 @@
     justify-content: center;
     color: var(--color-purple);
 }
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+   .container-purple{
+        width: 2.5rem;
+        height: 2.5rem;
+   }
+   .container-white{
+        width:2.5rem;
+        height:2.5rem;
+   }
+   .white{
+        width: 2.3rem;
+        height: 2.3rem;
+   }
+   .purple{
+        width: 2.3rem;
+        height: 2.3rem;
+   }
+}

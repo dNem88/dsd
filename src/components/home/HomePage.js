@@ -9,7 +9,7 @@ import Title from '../title/Title'
 import FullSpinner from '../FullSpinner/FullSpinner'
 
 function HomePage({offers}) {
-    
+
     const navigate = useNavigate()
     
     if (offers.offers) {

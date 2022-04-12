@@ -7,7 +7,8 @@ function Navigation({userContext}) {
     const context = useContext(userContext)
     
     const {user} = navigation;
-    console.log(user)
+   
+    
     if (context) {
     return (
         <nav className={styles['nav']}>
@@ -15,7 +16,7 @@ function Navigation({userContext}) {
                 <p>{context ? context.user.username : ''}</p>
             </div>
             <div className={styles['links-container']}>
-                    {user.slice(0,4).map(x => {
+                    {user.map(x => {
                         return <NavLink key={x.href} {...x} classname={'desktop-link'}/>
                     })}
             </div>

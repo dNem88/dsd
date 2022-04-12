@@ -94,3 +94,19 @@
     color: white;
     font-weight: bold;
 }
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+    .completion{
+        width: 3.5rem;
+        background-color: pink;
+    }
+    .completion > p{
+        width: 3.5rem;
+    }
+    .value > p{
+        width: 2.1rem;
+    }
+    .target > p{
+        width: 2.1rem;
+    }
+}

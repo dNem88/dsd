@@ -7,9 +7,11 @@
     background-color:var(--color-purple);
     color: white;
     border-radius: .35rem;
+    border: 1px solid var(--color-purple);
     margin: 1rem;
+    cursor: pointer;
 }
-.submit :hover{
+.submit:hover{
     color: var(--color-purple);
     background-color: white;
     border: 1px solid var(--color-purple);

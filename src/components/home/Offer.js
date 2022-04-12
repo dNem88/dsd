@@ -1,17 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './Offer.module.css'
 import {useNavigate} from 'react-router-dom'
 import Dial from '../dial/Dial'
 
 function Offer({_id, hood, price, address, phone, href}) {
     const navigate = useNavigate()
-
+    const [hover, setHover] = useState(false)
     function clickHandler(e) {
         navigate(`/${href}/${_id}`)
     }
+    function onHover(e) {
+        setHover(true)
+    }
+    function onLeave(e) {
+        setHover(false)
+    }
+    
     return (
-        <div className={styles.container} >
-            <Dial phoneNumber={phone} color={'purple'}/>
+        <div className={styles.container} onMouseEnter={onHover} onMouseLeave={onLeave}>
+            <Dial phoneNumber={phone} color={hover ? 'white' : 'purple'}/>
             <div className={styles.info} onClick={clickHandler}>
                 <div className={styles['first-row']}>
                     <h3>{hood}</h3>

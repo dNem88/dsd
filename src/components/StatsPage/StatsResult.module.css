@@ -22,7 +22,7 @@
 }
 .thead{
     width: 95vw;
-    height: 2vh;
+    height: 3vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,3 +49,8 @@
     height: 4vh;
 }
 
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+   .thead{
+       height: 2rem;
+   }
+}

@@ -9,6 +9,7 @@
     justify-content: center;
     border-radius: .35rem;
     margin: .5rem;
+    cursor: pointer;
 }
 
 .container > a{
@@ -31,4 +32,27 @@
     align-items: center;
     justify-content: center;
     margin-left: .5rem;
+}
+
+@media only screen and (min-width: 900px) {
+    .container{
+        width: 7rem;
+    }
+    .container:hover{
+        background-color: #9a8df3;
+    }
+    .container:hover > a{
+        background-color: #9a8df3;
+    }
+    .container:hover > .image-container{
+        background-color: #9a8df3;
+    }
+    .container > a{
+        width: 4rem;
+        height: 1.5rem;
+    }
+    .image-container{
+        width: 1.5rem;
+    }
+    
 }

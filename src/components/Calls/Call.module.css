@@ -68,10 +68,22 @@
 
 
 
-@media only screen and (min-width: 950px){
-    .container{
+@media only screen and (min-width: 900px){
+     .container{
         width: 30%;
-        height: 30vh;
+        height: 7vh;
         margin-left: 1rem;
+        border: 2px solid var(--color-purple);
+        border-radius: .5rem;
     }
+}
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+    .container{
+        height: 2rem;
+    }
+    .first-row > :nth-child(3) {
+        width: 2rem;
+        height: 1.8rem;
+       
+}
 }

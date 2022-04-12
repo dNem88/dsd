@@ -46,7 +46,7 @@ function StatsPage() {
     }
     return (
         <div className={styles.main}>
-            <Title content={'СТАТИСТИКА'}/>
+            <Title content={'Статистика'}/>
             <div className={styles.container}>
                 <Form title='Избери' submitHandler={onSubmit} content={'запази'}>
                     <Select options={collections} defaultSelected={''} label={'колекция'} setFormdata={setCollection} setStats={setStats}/>
@@ -55,9 +55,13 @@ function StatsPage() {
                     {error && <p className={styles.error}>{error.errorMessage}</p>}
                 </Form>
             </div>
-            {stats && 
+            {stats ?
                 <div className={styles['result-container']}>
                     {stats && <StatsResult stats={stats} collection={collection} year={year} month={month}/>}
+                </div>
+                :
+                <div className={styles['result-container']}>
+                    
                 </div>
             }
             

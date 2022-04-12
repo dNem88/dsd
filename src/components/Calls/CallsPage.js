@@ -8,7 +8,7 @@ function CallsPage() {
     
      return (
         <div className={styles.container}>
-            <Title content={'ОБАЖДАНИЯ'}/>
+            <Title content={'Обаждания'}/>
             <Outlet/>
         </div>     
         

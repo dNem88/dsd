@@ -43,3 +43,52 @@
     60% {opacity: 0;}
     100% {opacity: 1;}
 }
+
+@media only screen and (min-width: 900px) {
+    .main{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        overflow: hidden;
+    }
+    .container{
+        width: 40vw;
+        height: 60vh;
+        overflow: hidden;
+    }
+    .container > form{
+        width: 40vw;
+        
+    }
+  
+    .result-container{
+        width: 45%;
+        height: 60vh;
+        align-items: flex-start;
+    }
+}
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+     .main{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        overflow: hidden;
+    }
+    .container{
+        width: 40vw;
+        height: 91vh;
+        overflow: hidden;
+    }
+    .container > form{
+        width: 40vw;
+        
+    }
+  
+    .result-container{
+        width: 50%;
+        height: 91vh;
+        align-items: flex-start;
+    }
+}

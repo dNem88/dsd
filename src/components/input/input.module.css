@@ -19,3 +19,10 @@
     font-size: clamp(1rem, .8vw, 2rem);
     color: var(--color-grey);
 }
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+   .input{
+       width: 50vw;
+       height: 1.8rem;
+   }
+}
