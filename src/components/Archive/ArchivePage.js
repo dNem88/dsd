@@ -5,9 +5,12 @@ import ErrorComp from '../errorComp/ErrorComp'
 import {useNavigate} from 'react-router-dom'
 import Title from '../title/Title'
 import FullSpinner from '../FullSpinner/FullSpinner'
+import SearchBar from '../searchBar/SearchBar'
+import search from '../../assets/search.svg'
 
 function ArchivePage() {
     const [archive, setArchive] = useState({archive: null, error: null, errorMessage: null, update: true})
+    const [searchString, setSearchString] = useState('')
     const navigate = useNavigate()
     
     useEffect(() => {
@@ -19,21 +22,23 @@ function ArchivePage() {
                 }
             })
             const json = await response.json()
-            console.log(json)
             setArchive({...archive, archive: json, error: null})
             } catch(e) {
-            console.log(e)
             setArchive({...archive, error: true, errorMessage: e.message})
             }
         }
         FetchArchive()
     },[])
 
-
+    
     return (
         <div className={styles.container}>
+            <div className={styles['bar-container']}>
+                <img src={search}/>
+                <SearchBar setData={setSearchString} data={searchString}/>
+            </div>
             <Title content={'Архив'} />
-            {!archive.error ? archive.archive ? archive.archive.sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt)).map((x,i) => {
+            {!archive.error ? archive.archive ? archive.archive.filter(x => x.address.toLowerCase().includes(searchString.toLowerCase())).sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt)).map((x,i) => {
                 return <Offer key={i} href={'archive'} _id={x._id} phone={x.phone} hood={x.hood || 'N/A'} price={x.price || 'N/A'} address={x.address || 'N/A'}/>
             }) : <FullSpinner/> : <ErrorComp errorMessage={'Failed to fetch'}/>}
         </div>
