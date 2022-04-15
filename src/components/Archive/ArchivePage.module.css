@@ -15,12 +15,7 @@
     justify-content: center;
     background-color: var(--color-purple);
 }
-.bar-container > img{
-    position: absolute;
-    z-index: 4;
-    right: 15%;
-   
-}
+
 @media only screen and (min-width: 950px) {
     .container {
         background-color: white;
@@ -29,7 +24,5 @@
         align-items: center;
         justify-content: flex-start;
 }
-    .bar-container > img{
-        display: none;
-    }
+  
 }

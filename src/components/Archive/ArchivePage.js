@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom'
 import Title from '../title/Title'
 import FullSpinner from '../FullSpinner/FullSpinner'
 import SearchBar from '../searchBar/SearchBar'
-import search from '../../assets/search.svg'
+
 
 function ArchivePage() {
     const [archive, setArchive] = useState({archive: null, error: null, errorMessage: null, update: true})
@@ -34,7 +34,6 @@ function ArchivePage() {
     return (
         <div className={styles.container}>
             <div className={styles['bar-container']}>
-                <img src={search}/>
                 <SearchBar setData={setSearchString} data={searchString}/>
             </div>
             <Title content={'Архив'} />

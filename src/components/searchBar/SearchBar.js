@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styles from './SearchBar.module.css'
+import search from '../../assets/search.svg'
 
 function SearchBar({data,setData}) {
 
@@ -8,7 +9,10 @@ function SearchBar({data,setData}) {
     }
     console.log(data)
     return (
-        <input className={styles.search} type='search' id='search' placeholder='търси по адрес' value={data} onChange={changeHandler}></input>
+        <div className={styles.container}>
+            <input className={styles.search} type='search' id='search' placeholder='търси по адрес' value={data} onChange={changeHandler}></input>
+            <img src={search}/>
+        </div>
     )
 }
 
