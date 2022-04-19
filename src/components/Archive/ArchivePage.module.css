@@ -9,7 +9,7 @@
 .bar-container{
     width: 100vw;
     position: relative;
-    height: 10vh;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;

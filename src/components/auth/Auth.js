@@ -51,12 +51,13 @@ function Auth({setUser}) {
         return (
             <div className={styles.main}>
                 <form onSubmit={submitHandler} className={styles.form}>
+                    <h1>Sign in</h1>
                     <label htmlFor='username' placeholder='username' value={username}></label>
-                    <input onChange={changeUsername} type='text' placeholder='потребителско име' value={username} id='username'></input>
+                    <input onChange={changeUsername} type='text' placeholder='username' value={username} id='username'></input>
                     <label htmlFor='password' ></label>
-                    <input onChange={changePassword} type='password' placeholder='парола' value={password} id='password'></input>
+                    <input onChange={changePassword} type='password' placeholder='password' value={password} id='password'></input>
                     {error && <p style={{color: 'white'}}>{error}</p>}
-                    <button className={styles.submit} type='submit'>ВХОД</button>
+                    <button className={styles.submit} type='submit'>SIGN IN</button>
                 </form>
             </div>
         )

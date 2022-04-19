@@ -8,8 +8,8 @@
     justify-content: center;
 }
 .form {
-    width: 80%;
-    height: 40vh;
+    width: 20rem;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -21,20 +21,23 @@
 }
 .form > input {
     width: 80%;
-    height: 5vh;
+    height: 2.5rem;
     border: 2px solid white;
     border-radius: .5rem;
     margin-bottom: 1rem;
     padding-left: 1rem;
    
 }
+.form > h1{
+    color: white;
+}
 .form > input:focus{
     background-color: var(--color-purple);
     color: white;
 }
 .submit{
-    width: 24vw;
-    height: 5vh;
+    width: 7rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,7 +73,7 @@
         margin-top: 1rem;
     }
 }
-@media only screen and (max-width: 900px) and (orientation: landscape) {
+/* @media only screen and (max-width: 900px) and (orientation: landscape) {
     .form {
         width: 40vw;
         height: 30vw;
@@ -92,4 +95,4 @@
         width: 5rem;
         height: 2rem;
     }
-}
+} */
