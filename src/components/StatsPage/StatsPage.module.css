@@ -15,11 +15,14 @@
     flex-wrap: wrap;
     justify-content: center;
     overflow: scroll;
-    border-top: 2px solid var(--color-purple);
-    border-bottom: 2px solid var(--color-purple);
+    font-weight: bold;
+    /* border-top: 2px solid var(--color-purple);
+    border-bottom: 2px solid var(--color-purple); */
     margin-top: 1rem;
 }
-
+.container > form > label {
+    width: 85vw;
+}
 .result-container{
     box-sizing: border-box;
     padding: 0.5rem;

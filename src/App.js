@@ -48,7 +48,8 @@ function App() {
         try {
           const response = await fetch('https://dsdrealestate.herokuapp.com/offers', {
             headers: {
-              'Content-type': 'application/json'
+              'Content-type': 'application/json',
+              'Authorization' : user ? user.user.authToken : 'Unauthorized'
             }
           })
           const json = await response.json()
@@ -68,7 +69,8 @@ function App() {
             try{
                 let response = await fetch('https://dsdrealestate.herokuapp.com/deals', {
                     headers: {
-                        'content-type': 'application/json'
+                        'content-type': 'application/json',
+                        'Authorization': user ? user.user.authToken : 'Unauthorized'
                     }
                 })
                 if (!response.ok) {
@@ -92,7 +94,8 @@ function App() {
         try {
           const response = await fetch('https://dsdrealestate.herokuapp.com/calls', {
             headers: {
-              'Content-type': 'application/json'
+              'Content-type': 'application/json',
+              'Authorization': user ? user.user.authToken : 'Unauthorized'
             }
           })
           const json = await response.json()
@@ -114,7 +117,8 @@ function App() {
         try {
           const response = await fetch('https://dsdrealestate.herokuapp.com/customers', {
             headers: {
-              'Content-type': 'application/json'
+              'Content-type': 'application/json',
+              'Authorization': user ? user.user.authToken : 'Unauthorized'
             }
           })
           const json = await response.json()
@@ -130,6 +134,7 @@ function App() {
        }
     }, [customers.update, user])
     
+    console.log(user)
   return (
     <HashRouter>
       { window.innerWidth < 850 ? 

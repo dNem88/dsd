@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './SearchBar.module.css'
 import search from '../../assets/search.svg'
 

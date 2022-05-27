@@ -5,8 +5,8 @@ function Stat({keyField,value, period}) {
    
     const targets = {
         'оферти': {
-            year: 96,
-            month: 8
+            year: 168,
+            month: 14
         },
         'клиенти': {
             year: 50,
