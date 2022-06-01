@@ -4,6 +4,7 @@ import {HashRouter, Routes, Route} from 'react-router-dom'
 
 import Navigation from './components/navigation/Navigation'
 import MobileNavigation from './components/mobileNavigation/MobileNavigation';
+import Footer from './components/footer/Footer'
 
 import Auth from './components/auth/Auth'
 import HomePage from './components/home/HomePage';
@@ -183,6 +184,7 @@ function App() {
           }
         </Routes>
       </main>
+      {user && <Footer/>}
     </HashRouter>
    
   );
