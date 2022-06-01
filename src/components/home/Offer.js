@@ -21,7 +21,9 @@ function Offer({_id, hood, price, address, phone, href}) {
             <Dial phoneNumber={phone} color={hover ? 'white' : 'purple'}/>
             <div className={styles.info} onClick={clickHandler}>
                 <div className={styles['first-row']}>
-                    <h3>{hood}</h3>
+                    <div>
+                        <h3>{hood}</h3>
+                    </div>
                     <h3>{`${price} лв`}</h3>
                 </div>
                 <div className={styles['second-row']}>

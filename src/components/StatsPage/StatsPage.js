@@ -5,12 +5,12 @@ import Form from '../form/Form'
 import StatsResult from './StatsResult'
 import Title from '../title/Title'
 
-const collections = ['','оферти', 'клиенти', 'обаждания', 'сделки']
+const collections = ['оферти', 'клиенти', 'обаждания', 'сделки']
 const months = ['', 'януари', 'февруари', 'март', 'април', 'май', 'юни', 'юли', 'август', 'септември', 'октомври', 'ноември', 'декември']
 const years = [2022, 2023, 2024, 2025, 2026]
 
 function StatsPage() {
-    const [collection, setCollection] = useState('')
+    const [collection, setCollection] = useState('оферти')
     const [year, setYear] = useState(new Date().getFullYear())
     const [month, setMonth] = useState('');
     const [error, setError] = useState(null);
@@ -20,10 +20,10 @@ function StatsPage() {
         e.preventDefault()
         let formdata = {
             collection: collection,
-            year: year,
+            year: +year,
             month: month
         }
-       
+       console.log(formdata)
        
         try {
             const response = await fetch('https://dsdrealestate.herokuapp.com/stats', {
