@@ -35,6 +35,8 @@ import StatsPage from './components/StatsPage/StatsPage';
 import Tasks from './components/TasksPage/Tasks'
 import TaskList from './components/TasksPage/TaskList';
 import TaskById from './components/TasksPage/TaskById';
+import EditTask from './components/TasksPage/EditTask';
+import AddTask from './components/TasksPage/AddTask';
 
 const userContext = React.createContext(null)
 
@@ -143,7 +145,7 @@ function App() {
       //  'https://dsdrealestate.herokuapp.com/tasks'
        async function FetchTasks() {
         try {
-          const response = await fetch('http://localhost:4000/tasks', {
+          const response = await fetch('https://dsdrealestate.herokuapp.com/tasks', {
             headers: {
               'Content-type': 'application/json',
               'Authorization' : user ? user.user.authToken : 'Unauthorized'
@@ -205,8 +207,8 @@ function App() {
                 <Route index element={<CustomersList customers={customers}/>}/>
               </Route>
               <Route path={'/tasks/*'} element={<Tasks/>}>
-                {/* <Route path={':id/add'} element={<AddTask tasks={tasks} setTasks={setTasks}/>}/>
-                <Route path={':id/edit'} element={<EditCustomer setTasks={setTasks} tasks={tasks}/>}/> */}
+                <Route path={'add'} element={<AddTask tasks={tasks} setTasks={setTasks}/>}/>
+                <Route path={':id/edit'} element={<EditTask setTasks={setTasks} tasks={tasks}/>}/>
                 <Route path={':id'} element={<TaskById tasks={tasks} setTasks={setTasks}/>}/>
                 <Route index element={<TaskList tasks={tasks}/>}/>
               </Route>

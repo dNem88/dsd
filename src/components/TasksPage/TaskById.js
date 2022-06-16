@@ -15,7 +15,7 @@ function TaskById({tasks, setTasks}) {
     useEffect(() => {
         async function FetchTask() {
             try{
-                const response = await fetch(`http://localhost:4000/tasks/${id}`, {
+                const response = await fetch(`https://dsdrealestate.herokuapp.com/tasks/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -35,7 +35,7 @@ function TaskById({tasks, setTasks}) {
 
      async function onDelete() {
          try{
-            const response = await fetch(`http://localhost:4000/tasks/${id}`, {
+            const response = await fetch(`https://dsdrealestate.herokuapp.com/tasks/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'
@@ -61,11 +61,13 @@ function TaskById({tasks, setTasks}) {
             {task.task &&
                 <Fragment>
                     <Title content={'Задача'}/>
-                    <div>
+                    <div className={styles.task}>
+                        <p>задача</p>
                         {task.task}
                     </div>
-                    <div>
-                        {task.expiresAt}
+                    <div className={styles.date}>
+                        <p>дата</p>
+                        {new Date(+task.expiresAt).toDateString()}
                     </div>
                      <LinkButton href={``} clickHandler={() => {navigate(`/tasks/${id}/edit`)}} image={'edit'} content={'промени'}/>
                     <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
