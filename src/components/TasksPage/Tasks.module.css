@@ -1,0 +1,10 @@
+.wrapper{
+    background-color: var(--color-purple);
+    min-height: 95vh;
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}

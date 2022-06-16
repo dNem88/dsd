@@ -34,9 +34,7 @@
 .first-row > div {
     width: 60%;
     height: 100%;
-    /* overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; */
+   
 }
 .first-row > div > h3{
     padding: 0;

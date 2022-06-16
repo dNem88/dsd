@@ -15,12 +15,14 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: var(--color-purple)
+    color: var(--color-purple);
+    overflow: hidden;
 }
 .key > p{
     margin: 0;
     padding: 0;
-    color: var(--color-dark-grey);
+    padding-left: 1rem;
+    color: var(--color-purple);
     font-size: 1rem;
     font-weight: bold;
 
@@ -57,6 +59,7 @@
     align-items: center;
     justify-content: center;
     margin-right: .25rem;
+  
 }
 
 .target > p{

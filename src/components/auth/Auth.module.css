@@ -8,25 +8,27 @@
     justify-content: center;
 }
 .form {
-    width: 20rem;
-    height: 30rem;
+    box-sizing: border-box;
+    max-width: 19rem;
+    width: 95%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     background-color: var(--color-purple);
-    border-radius: 1rem;
-    border: 2px solid white;
+   
 }
 .form > input {
-    width: 80%;
+    box-sizing: border-box;
+    max-width: 19rem;
+    width: 95%;
     height: 2.5rem;
-    border: 2px solid white;
     border-radius: .5rem;
     margin-bottom: 1rem;
+    border: 1px solid white;
+    margin-bottom: 1.25rem;
     padding-left: 1rem;
-   
 }
 .form > h1{
     color: white;
@@ -36,7 +38,8 @@
     color: white;
 }
 .submit{
-    width: 7rem;
+    max-width: 19rem;
+    width: 95%;
     height: 2.5rem;
     display: flex;
     align-items: center;
@@ -57,42 +60,5 @@
     .form {
         width: 30vw;
     }
-    .form > input {
-        width: 60%;
-        height: 5vh;
-        border: 2px solid white;
-        border-radius: .5rem;
-        margin-bottom: 1rem;
-        padding-left: 1rem;
-    }   
-    .form > :nth-child(1) {
-        margin-top: 6vh;
-    }
-    .submit{
-        width: 7vw;
-        margin-top: 1rem;
-    }
+  
 }
-/* @media only screen and (max-width: 900px) and (orientation: landscape) {
-    .form {
-        width: 40vw;
-        height: 30vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .form > input {
-        width: 60%;
-        height: 1.5rem;
-        border: 2px solid white;
-        border-radius: .5rem;
-        margin-bottom: 1rem;
-        padding-left: 1rem;
-    }   
-   
-    .submit{
-        margin-top: 1rem;
-        width: 5rem;
-        height: 2rem;
-    }
-} */

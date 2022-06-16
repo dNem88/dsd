@@ -24,6 +24,9 @@ const navigation = {
         }, {
             href: '/offers/archive',
             content: 'Архив'
+        }, {
+            href: '/tasks',
+            content: 'Списък със задачи'
         }
         ]
 }
