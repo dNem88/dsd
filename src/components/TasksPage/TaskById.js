@@ -2,8 +2,6 @@ import React, {useState, useEffect, Fragment} from 'react'
 import styles from './TaskById.module.css'
 import {useParams, useNavigate} from 'react-router-dom'
 import LinkButton from '../LinkButton/LinkButton'
-import TableRow from '../tableRow/TableRow'
-import Table from '../table/Table'
 import Title from '../title/Title'
 import FullSpinner from '../FullSpinner/FullSpinner'
 
@@ -67,7 +65,7 @@ function TaskById({tasks, setTasks}) {
             </div>
             <div className={styles['buttons']}>
                 <LinkButton href={``} clickHandler={() => {navigate(`/tasks/${id}/edit`)}} image={'edit'} content={'промени'}/>
-                <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={''}/>
+                <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
             </div>
        </div>
     )
