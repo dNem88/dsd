@@ -1,16 +1,17 @@
 .container{
-    width: 100%;
+    width: 95%;
     box-sizing: border-box;
     background-color: var(--color-purple);
     display: flex;
     flex-wrap: wrap;
-    border-bottom-right-radius: 50px;
-    
+   
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 .task{
     max-width: 300px;
     width: 100%;
-    height: fit-content;
+    height: fit-content;    
     padding: 10px;
     height: max-content;
     color: white;
@@ -24,5 +25,5 @@
     justify-content: flex-end;
     color: white;
     padding-right: 40px;
- 
+   font-weight: bold;
 }

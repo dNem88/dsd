@@ -13,7 +13,7 @@ function EditTask({setTasks, tasks}) {
     useEffect(() => {
          async function Fetch() {
             try{
-                const response = await fetch(`http://localhost:4000/tasks/${id}`, {
+                const response = await fetch(`https://dsdrealestate.herokuapp.com/tasks/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }

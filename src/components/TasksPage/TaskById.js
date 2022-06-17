@@ -24,9 +24,11 @@ function TaskById({tasks, setTasks}) {
                     throw new Error('Failed to get task!')
                 }
                 let json = await response.json()
-                console.log(json)
+                
                 setTask({...task, ...json})
+                
             }catch(e) {
+                
                 setTask({...task, error: true, errorMessage: e.message})
             }
         }
@@ -54,30 +56,21 @@ function TaskById({tasks, setTasks}) {
     }
    
    
-
-     if (task.task) {
     return (
         <div className={styles.container}>
-            {task.task &&
-                <Fragment>
-                    <Title content={'Задача'}/>
-                    <div className={styles.task}>
-                        <p>задача</p>
-                        {task.task}
-                    </div>
-                    <div className={styles.date}>
-                        <p>дата</p>
-                        {new Date(+task.expiresAt).toDateString()}
-                    </div>
-                     <LinkButton href={``} clickHandler={() => {navigate(`/tasks/${id}/edit`)}} image={'edit'} content={'промени'}/>
-                    <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
-                </Fragment>
-
-             }
-        </div>
-    )} else {
-        return <FullSpinner/>
-    }
+            <Title content={'Задача'}/>
+            <div className={styles.task}>
+                <p>задача</p>
+                <p>{task.task || ''}</p> 
+            </div>
+            <div className={styles.date}>
+                <p>дата</p>
+                <p> {new Date(+task.expiresAt).toDateString() || 'wrong date'}</p>
+            </div>
+            <LinkButton href={``} clickHandler={() => {navigate(`/tasks/${id}/edit`)}} image={'edit'} content={'промени'}/>
+            <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
+       </div>
+    )
 }
 
 export default TaskById

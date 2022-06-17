@@ -26,7 +26,7 @@ const navigation = {
             content: 'Архив'
         }, {
             href: '/tasks',
-            content: 'Списък със задачи'
+            content: 'Задачи'
         }
         ]
 }

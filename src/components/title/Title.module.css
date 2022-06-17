@@ -1,12 +1,15 @@
 .wrapper{
+
+    box-sizing: border-box;
     width: 100%;
     height: max-content;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     color: var(--color-purple);
-    margin: .5rem;
     padding: 0;
+    margin-bottom: .75rem;
+    margin-top: .75rem;
 }
 .wrapper > h2{
      height: 5vh;
