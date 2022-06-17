@@ -49,7 +49,7 @@ function AddTask({tasks, setTasks}) {
     console.log(formdata)
     return (
         <div className={styles.container}>
-            <Form title={'Добави обаждания'} content={'Добави'} submitHandler={submitHandler}>
+            <Form title={'Добави задача'} content={'Добави'} submitHandler={submitHandler}>
                 <Input type='text' labelContent='задача' id='task' onChange={changeHandler} value={formdata.task}/>
                 <Input type='date' labelContent='дата' id='expiresAt' onChange={changeDate} value={formdata.date}/>
                 {error && <p>{error.message}</p>}

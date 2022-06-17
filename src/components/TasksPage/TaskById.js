@@ -60,15 +60,15 @@ function TaskById({tasks, setTasks}) {
         <div className={styles.container}>
             <Title content={'Задача'}/>
             <div className={styles.task}>
-                <p>задача</p>
-                <p>{task.task || ''}</p> 
+               {task.task || ''}
             </div>
             <div className={styles.date}>
-                <p>дата</p>
-                <p> {new Date(+task.expiresAt).toDateString() || 'wrong date'}</p>
+                <p> {new Date(+task.expiresAt).toDateString() || 'грешна дата'}</p>
             </div>
-            <LinkButton href={``} clickHandler={() => {navigate(`/tasks/${id}/edit`)}} image={'edit'} content={'промени'}/>
-            <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={'del'}/>
+            <div className={styles['buttons']}>
+                <LinkButton href={``} clickHandler={() => {navigate(`/tasks/${id}/edit`)}} image={'edit'} content={'промени'}/>
+                <LinkButton href={``} clickHandler={onDelete} content={'изтрий'} image={''}/>
+            </div>
        </div>
     )
 }
