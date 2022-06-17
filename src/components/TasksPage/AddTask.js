@@ -40,17 +40,18 @@ function AddTask({tasks, setTasks}) {
         setFormdata({...formdata, [e.target.id]: e.target.value})
     }
     function changeDate(e) {
+        
         setFormdata({
             ...formdata,
             [e.target.id]: new Date(e.target.value).getTime()
         })
     }
-    
+    console.log(formdata)
     return (
         <div className={styles.container}>
             <Form title={'Добави обаждания'} content={'Добави'} submitHandler={submitHandler}>
                 <Input type='text' labelContent='задача' id='task' onChange={changeHandler} value={formdata.task}/>
-                <Input type='date' labelContent='дата' id='expiresAt' onChange={changeDate} value={formdata.expiresAt}/>
+                <Input type='date' labelContent='дата' id='expiresAt' onChange={changeDate} value={formdata.date}/>
                 {error && <p>{error.message}</p>}
             </Form>
         </div>
