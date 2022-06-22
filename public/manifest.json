@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "DSD Group",
   "name": "DSD GROUP @2022",
   "icons": [
     {
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#ffffff",
+  "background_color": "#7360f2"
 }

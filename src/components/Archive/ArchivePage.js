@@ -37,7 +37,7 @@ function ArchivePage() {
                 <SearchBar setData={setSearchString} data={searchString}/>
             </div>
             <Title content={'Архив'} />
-            {!archive.error ? archive.archive ? archive.archive.filter(x => x.address.toLowerCase().includes(searchString.toLowerCase())).sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt)).map((x,i) => {
+            {!archive.error ? archive.archive ? archive.archive.filter(x => x.address.toLowerCase().includes(searchString.toLowerCase())).sort((a,b) => new Date(b.createdAt)-new Date(a.createdAt)).slice(0, 10).map((x,i) => {
                 return <Offer key={i} href={'archive'} _id={x._id} phone={x.phone} hood={x.hood || 'N/A'} price={x.price || 'N/A'} address={x.address || 'N/A'}/>
             }) : <FullSpinner/> : <ErrorComp errorMessage={'Failed to fetch'}/>}
         </div>

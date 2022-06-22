@@ -1,5 +1,6 @@
 .main{
     width: 100%;
+    min-height: 90vh;
     height: max-content;
     display: flex;
     flex-direction: column;
@@ -9,6 +10,7 @@
 .container {
     box-sizing: border-box;
     width: 100vw;
+    
     height: max-content;
     /* min-height: 90vh; */
     display: flex;
