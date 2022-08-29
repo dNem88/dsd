@@ -15,7 +15,7 @@ function DealById({deals, setDeals}) {
     useEffect(() => {
         async function Fetch() {
             try{
-                const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/deals/${id}`, {
+                const response = await fetch(`http://dsdrealestate.herokuapp.com//deals/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -34,7 +34,7 @@ function DealById({deals, setDeals}) {
 
     async function onDelete() {
          try{
-            const response = await fetch('https://easy-rose-coral-veil.cyclic.app/deals', {
+            const response = await fetch('http://dsdrealestate.herokuapp.com//deals', {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'

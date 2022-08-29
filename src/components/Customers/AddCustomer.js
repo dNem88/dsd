@@ -17,7 +17,7 @@ function AddCustomer({customers, setCustomers}) {
     useEffect(() => {
         async function FetchCustomers() {
             try{
-                const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/offers/${id}`, {
+                const response = await fetch(`http://dsdrealestate.herokuapp.com//offers/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -35,7 +35,7 @@ function AddCustomer({customers, setCustomers}) {
     }, [])
     async function postCustomer(formdata) {
         try{
-            const response = await fetch('https://easy-rose-coral-veil.cyclic.app/customers', {
+            const response = await fetch('http://dsdrealestate.herokuapp.com//customers', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

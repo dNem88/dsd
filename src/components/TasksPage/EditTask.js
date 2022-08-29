@@ -13,7 +13,7 @@ function EditTask({setTasks, tasks}) {
     useEffect(() => {
          async function Fetch() {
             try{
-                const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/tasks/${id}`, {
+                const response = await fetch(`http://dsdrealestate.herokuapp.com//tasks/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -32,7 +32,7 @@ function EditTask({setTasks, tasks}) {
     async function submitHandler(e) {
         e.preventDefault()
         try{
-            const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/tasks/${id}`, {
+            const response = await fetch(`http://dsdrealestate.herokuapp.com//tasks/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

@@ -26,7 +26,7 @@ function StatsPage() {
        console.log(formdata)
        
         try {
-            const response = await fetch('https://easy-rose-coral-veil.cyclic.app/stats', {
+            const response = await fetch('http://dsdrealestate.herokuapp.com//stats', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'

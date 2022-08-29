@@ -1,4 +1,4 @@
-const cyclic_url = 'https://easy-rose-coral-veil.cyclic.app'
+const cyclic_url = 'http://dsdrealestate.herokuapp.com/'
 
 async function loginUser(formInput) {
     try {
