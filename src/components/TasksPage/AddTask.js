@@ -13,7 +13,7 @@ function AddTask({tasks, setTasks}) {
     })
     async function postTask(formdata) {
         try{
-            const response = await fetch('http://dsdrealestate.herokuapp.com//tasks', {
+            const response = await fetch('http://dsdrealestate.herokuapp.com/tasks', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
