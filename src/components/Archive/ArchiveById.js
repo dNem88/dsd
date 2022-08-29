@@ -18,7 +18,7 @@ function ArchiveById({setOffers, offers}) {
     useEffect(() => {
         async function Fetch() {
             try{
-                const response = await fetch(`https://dsdrealestate.herokuapp.com/offers/${id}`, {
+                const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/offers/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -38,7 +38,7 @@ function ArchiveById({setOffers, offers}) {
 
     async function Activate(e) {
         try{
-            const response = await fetch(`https://dsdrealestate.herokuapp.com/offers/${id}`, {
+            const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/offers/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

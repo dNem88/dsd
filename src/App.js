@@ -53,7 +53,7 @@ function App() {
     useEffect(() => {
        async function FetchOffers() {
         try {
-          const response = await fetch('https://dsdrealestate.herokuapp.com/offers', {
+          const response = await fetch('https://easy-rose-coral-veil.cyclic.app/offers', {
             headers: {
               'Content-type': 'application/json',
               'Authorization' : user ? user.user.authToken : 'Unauthorized'
@@ -74,7 +74,7 @@ function App() {
     useEffect(() => {
         async function Fetch() {
             try{
-                let response = await fetch('https://dsdrealestate.herokuapp.com/deals', {
+                let response = await fetch('https://easy-rose-coral-veil.cyclic.app/deals', {
                     headers: {
                         'content-type': 'application/json',
                         'Authorization': user ? user.user.authToken : 'Unauthorized'
@@ -99,7 +99,7 @@ function App() {
      useEffect(() => {
        async function FetchCalls() {
         try {
-          const response = await fetch('https://dsdrealestate.herokuapp.com/calls', {
+          const response = await fetch('https://easy-rose-coral-veil.cyclic.app/calls', {
             headers: {
               'Content-type': 'application/json',
               'Authorization': user ? user.user.authToken : 'Unauthorized'
@@ -122,7 +122,7 @@ function App() {
     useEffect(() => {
        async function FetchCustomers() {
         try {
-          const response = await fetch('https://dsdrealestate.herokuapp.com/customers', {
+          const response = await fetch('https://easy-rose-coral-veil.cyclic.app/customers', {
             headers: {
               'Content-type': 'application/json',
               'Authorization': user ? user.user.authToken : 'Unauthorized'

@@ -1,8 +1,8 @@
-const heroku_api_url = 'https://dsdrealestate.herokuapp.com'
+const cyclic_url = 'https://easy-rose-coral-veil.cyclic.app'
 
 async function loginUser(formInput) {
     try {
-        const response = await fetch(`${heroku_api_url}/users/login`, {
+        const response = await fetch(`${cyclic_url}/users/login`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
