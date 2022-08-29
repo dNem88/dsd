@@ -142,10 +142,10 @@ function App() {
     }, [customers.update, user])
     
     useEffect(() => {
-      //  'https://dsdrealestate.herokuapp.com/tasks'
+      //  'https://easy-rose-coral-veil.cyclic.app/tasks'
        async function FetchTasks() {
         try {
-          const response = await fetch('https://dsdrealestate.herokuapp.com/tasks', {
+          const response = await fetch('https://easy-rose-coral-veil.cyclic.app/tasks', {
             headers: {
               'Content-type': 'application/json',
               'Authorization' : user ? user.user.authToken : 'Unauthorized'
@@ -162,7 +162,7 @@ function App() {
 
        }
     }, [tasks.update, user])
-    console.log(tasks)
+   
   return (
     <HashRouter>
       { window.innerWidth < 850 ? 
