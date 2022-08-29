@@ -26,7 +26,7 @@ function StatsPage() {
        console.log(formdata)
        
         try {
-            const response = await fetch('http://dsdrealestate.herokuapp.com/stats', {
+            const response = await fetch('https://dsdrealestate.herokuapp.com/stats', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'

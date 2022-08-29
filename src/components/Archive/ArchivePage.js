@@ -16,7 +16,7 @@ function ArchivePage() {
     useEffect(() => {
         async function FetchArchive() {
             try {
-            const response = await fetch('http://dsdrealestate.herokuapp.com/offers/archive', {
+            const response = await fetch('https://dsdrealestate.herokuapp.com/offers/archive', {
                 headers: {
                 'Content-type': 'application/json'
                 }

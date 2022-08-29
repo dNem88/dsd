@@ -18,7 +18,7 @@ function CustomerById({setCustomers, customers}) {
     useEffect(() => {
         async function FetchCustomer() {
             try{
-                const response = await fetch(`http://dsdrealestate.herokuapp.com/customers/${id}`, {
+                const response = await fetch(`https://dsdrealestate.herokuapp.com/customers/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -38,7 +38,7 @@ function CustomerById({setCustomers, customers}) {
   
     async function onDelete() {
          try{
-            const response = await fetch('http://dsdrealestate.herokuapp.com/customers', {
+            const response = await fetch('https://dsdrealestate.herokuapp.com/customers', {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'

@@ -1,4 +1,4 @@
-const cyclic_url = 'http://dsdrealestate.herokuapp.com'
+const cyclic_url = 'https://dsdrealestate.herokuapp.com'
 
 async function loginUser(formInput) {
     try {

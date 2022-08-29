@@ -53,7 +53,7 @@ function App() {
     useEffect(() => {
        async function FetchOffers() {
         try {
-          const response = await fetch('http://dsdrealestate.herokuapp.com/offers', {
+          const response = await fetch('https://dsdrealestate.herokuapp.com/offers', {
             headers: {
               'Content-type': 'application/json',
               'Authorization' : user ? user.user.authToken : 'Unauthorized'
@@ -74,7 +74,7 @@ function App() {
     useEffect(() => {
         async function Fetch() {
             try{
-                let response = await fetch('http://dsdrealestate.herokuapp.com/deals', {
+                let response = await fetch('https://dsdrealestate.herokuapp.com/deals', {
                     headers: {
                         'content-type': 'application/json',
                         'Authorization': user ? user.user.authToken : 'Unauthorized'
@@ -99,7 +99,7 @@ function App() {
      useEffect(() => {
        async function FetchCalls() {
         try {
-          const response = await fetch('http://dsdrealestate.herokuapp.com/calls', {
+          const response = await fetch('https://dsdrealestate.herokuapp.com/calls', {
             headers: {
               'Content-type': 'application/json',
               'Authorization': user ? user.user.authToken : 'Unauthorized'
@@ -122,7 +122,7 @@ function App() {
     useEffect(() => {
        async function FetchCustomers() {
         try {
-          const response = await fetch('http://dsdrealestate.herokuapp.com/customers', {
+          const response = await fetch('https://dsdrealestate.herokuapp.com/customers', {
             headers: {
               'Content-type': 'application/json',
               'Authorization': user ? user.user.authToken : 'Unauthorized'
@@ -142,10 +142,10 @@ function App() {
     }, [customers.update, user])
     
     useEffect(() => {
-      //  'http://dsdrealestate.herokuapp.com/tasks'
+      //  'https://dsdrealestate.herokuapp.com/tasks'
        async function FetchTasks() {
         try {
-          const response = await fetch('http://dsdrealestate.herokuapp.com/tasks', {
+          const response = await fetch('https://dsdrealestate.herokuapp.com/tasks', {
             headers: {
               'Content-type': 'application/json',
               'Authorization' : user ? user.user.authToken : 'Unauthorized'
