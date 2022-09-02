@@ -13,7 +13,7 @@ function TaskById({tasks, setTasks}) {
     useEffect(() => {
         async function FetchTask() {
             try{
-                const response = await fetch(`https://dsdrealestate.herokuapp.com/tasks/${id}`, {
+                const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/tasks/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -35,7 +35,7 @@ function TaskById({tasks, setTasks}) {
 
      async function onDelete() {
          try{
-            const response = await fetch(`https://dsdrealestate.herokuapp.com/tasks/${id}`, {
+            const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/tasks/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'
