@@ -59,7 +59,7 @@ function StatsResult({stats, collection, year, month}) {
                 <p></p>
             </div>
             {stats && result && Object.entries(result).map(x =>  {
-                return <Stat key={x[0]} keyField={x[0].split('_').join(' ')} value={x[1]} period={month ? 'month' : 'year'}/>
+                return <Stat key={x[0]} keyField={x[0].split('_').join(' ')} value={x[1]} period={month ? 'month' : 'year'} year={year}/>
             })}
         </div>
     )
