@@ -1,8 +1,8 @@
-const cyclic_url = 'https://realestate-p973.onrender.com'
+const render_url = 'https://realestate-p973.onrender.com'
 
 async function loginUser(formInput) {
     try {
-        const response = await fetch(`${cyclic_url}/users/login`, {
+        const response = await fetch(`${render_url}/users/login`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
