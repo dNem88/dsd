@@ -1,4 +1,4 @@
-const cyclic_url = 'https://easy-rose-coral-veil.cyclic.app'
+const cyclic_url = 'https://realestate-p973.onrender.com'
 
 async function loginUser(formInput) {
     try {

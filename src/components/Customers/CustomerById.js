@@ -18,7 +18,7 @@ function CustomerById({setCustomers, customers}) {
     useEffect(() => {
         async function FetchCustomer() {
             try{
-                const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/customers/${id}`, {
+                const response = await fetch(`https://realestate-p973.onrender.com/customers/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -38,7 +38,7 @@ function CustomerById({setCustomers, customers}) {
   
     async function onDelete() {
          try{
-            const response = await fetch('https://easy-rose-coral-veil.cyclic.app/customers', {
+            const response = await fetch('https://realestate-p973.onrender.com/customers', {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'

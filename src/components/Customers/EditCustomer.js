@@ -13,7 +13,7 @@ function EditCustomer({setCustomers, customers}) {
     useEffect(() => {
          async function Fetch() {
             try{
-                const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/customers/${id}`, {
+                const response = await fetch(`https://realestate-p973.onrender.com/customers/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -32,7 +32,7 @@ function EditCustomer({setCustomers, customers}) {
     async function submitHandler(e) {
         e.preventDefault()
         try{
-            const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/customers/${id}`, {
+            const response = await fetch(`https://realestate-p973.onrender.com/customers/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

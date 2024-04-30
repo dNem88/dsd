@@ -21,7 +21,7 @@ function OfferById({setOffers, offers}) {
     useEffect(() => {
         async function Fetch() {
             try{
-                const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/offers/${id}`, {
+                const response = await fetch(`https://realestate-p973.onrender.com/offers/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -40,7 +40,7 @@ function OfferById({setOffers, offers}) {
     useEffect(() => {
         async function FetchCustomers() {
             try{
-                const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/customers/offer/${id}`, {
+                const response = await fetch(`https://realestate-p973.onrender.com/customers/offer/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -60,7 +60,7 @@ function OfferById({setOffers, offers}) {
     
     async function onDelete() {
          try{
-            const response = await fetch('https://easy-rose-coral-veil.cyclic.app/offers', {
+            const response = await fetch('https://realestate-p973.onrender.com/offers', {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'
@@ -79,7 +79,7 @@ function OfferById({setOffers, offers}) {
     }
     async function Archive(e) {
         try{
-            const response = await fetch(`https://easy-rose-coral-veil.cyclic.app/offers/${id}`, {
+            const response = await fetch(`https://realestate-p973.onrender.com/offers/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

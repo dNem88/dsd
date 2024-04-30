@@ -13,7 +13,7 @@ function AddCall({calls, setCalls}) {
     })
     async function postCall(formdata) {
         try{
-            const response = await fetch('https://easy-rose-coral-veil.cyclic.app/calls', {
+            const response = await fetch('https://realestate-p973.onrender.com/calls', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

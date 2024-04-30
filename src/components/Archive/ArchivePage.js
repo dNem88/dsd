@@ -16,7 +16,7 @@ function ArchivePage() {
     useEffect(() => {
         async function FetchArchive() {
             try {
-            const response = await fetch('https://easy-rose-coral-veil.cyclic.app/offers/archive', {
+            const response = await fetch('https://realestate-p973.onrender.com/offers/archive', {
                 headers: {
                 'Content-type': 'application/json'
                 }
