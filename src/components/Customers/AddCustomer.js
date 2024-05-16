@@ -17,7 +17,7 @@ function AddCustomer({customers, setCustomers}) {
     useEffect(() => {
         async function FetchCustomers() {
             try{
-                const response = await fetch(`https://realestate-p973.onrender.com/offers/${id}`, {
+                const response = await fetch(`https://realestate2024-dnem88s-projects.vercel.app/offers/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -35,7 +35,7 @@ function AddCustomer({customers, setCustomers}) {
     }, [])
     async function postCustomer(formdata) {
         try{
-            const response = await fetch('https://realestate-p973.onrender.com/customers', {
+            const response = await fetch('https://realestate2024-dnem88s-projects.vercel.app/customers', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

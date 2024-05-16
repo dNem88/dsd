@@ -26,7 +26,7 @@ function StatsPage() {
        console.log(formdata)
        
         try {
-            const response = await fetch('https://realestate-p973.onrender.com/stats', {
+            const response = await fetch('https://realestate2024-dnem88s-projects.vercel.app/stats', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'

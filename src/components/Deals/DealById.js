@@ -15,7 +15,7 @@ function DealById({deals, setDeals}) {
     useEffect(() => {
         async function Fetch() {
             try{
-                const response = await fetch(`https://realestate-p973.onrender.com/deals/${id}`, {
+                const response = await fetch(`https://realestate2024-dnem88s-projects.vercel.app/deals/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -34,7 +34,7 @@ function DealById({deals, setDeals}) {
 
     async function onDelete() {
          try{
-            const response = await fetch('https://realestate-p973.onrender.com/deals', {
+            const response = await fetch('https://realestate2024-dnem88s-projects.vercel.app/deals', {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'

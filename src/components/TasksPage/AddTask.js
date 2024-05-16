@@ -13,7 +13,7 @@ function AddTask({tasks, setTasks}) {
     })
     async function postTask(formdata) {
         try{
-            const response = await fetch('https://realestate-p973.onrender.com/tasks', {
+            const response = await fetch('https://realestate2024-dnem88s-projects.vercel.app/tasks', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

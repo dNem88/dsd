@@ -1,4 +1,4 @@
-const render_url = 'https://realestate-p973.onrender.com'
+const render_url = 'https://realestate2024-dnem88s-projects.vercel.app'
 
 async function loginUser(formInput) {
     try {

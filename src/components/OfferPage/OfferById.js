@@ -21,7 +21,7 @@ function OfferById({setOffers, offers}) {
     useEffect(() => {
         async function Fetch() {
             try{
-                const response = await fetch(`https://realestate-p973.onrender.com/offers/${id}`, {
+                const response = await fetch(`https://realestate2024-dnem88s-projects.vercel.app/offers/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -40,7 +40,7 @@ function OfferById({setOffers, offers}) {
     useEffect(() => {
         async function FetchCustomers() {
             try{
-                const response = await fetch(`https://realestate-p973.onrender.com/customers/offer/${id}`, {
+                const response = await fetch(`https://realestate2024-dnem88s-projects.vercel.app/customers/offer/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -60,7 +60,7 @@ function OfferById({setOffers, offers}) {
     
     async function onDelete() {
          try{
-            const response = await fetch('https://realestate-p973.onrender.com/offers', {
+            const response = await fetch('https://realestate2024-dnem88s-projects.vercel.app/offers', {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'
@@ -79,7 +79,7 @@ function OfferById({setOffers, offers}) {
     }
     async function Archive(e) {
         try{
-            const response = await fetch(`https://realestate-p973.onrender.com/offers/${id}`, {
+            const response = await fetch(`https://realestate2024-dnem88s-projects.vercel.app/offers/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

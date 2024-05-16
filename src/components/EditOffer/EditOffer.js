@@ -13,7 +13,7 @@ function EditOffer({setOffers, offers}) {
     useEffect(() => {
          async function Fetch() {
             try{
-                const response = await fetch(`https://realestate-p973.onrender.com/offers/${id}`, {
+                const response = await fetch(`https://realestate2024-dnem88s-projects.vercel.app/offers/${id}`, {
                     headers: {
                         'content-type': 'application/json'
                     }
@@ -32,7 +32,7 @@ function EditOffer({setOffers, offers}) {
     async function submitHandler(e) {
         e.preventDefault()
         try{
-            const response = await fetch(`https://realestate-p973.onrender.com/offers/${id}`, {
+            const response = await fetch(`https://realestate2024-dnem88s-projects.vercel.app/offers/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

@@ -17,7 +17,7 @@ function AddOffer({offers, setOffers}) {
     })
     async function postOffer(formdata) {
         try{
-            const response = await fetch('https://realestate-p973.onrender.com/offers', {
+            const response = await fetch('https://realestate2024-dnem88s-projects.vercel.app/offers', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
